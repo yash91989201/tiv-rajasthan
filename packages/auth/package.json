@@ -1,0 +1,24 @@
+{
+  "name": "@tiv-rajasthan/auth",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {},
+  "dependencies": {
+    "@tiv-rajasthan/db": "workspace:*",
+    "@tiv-rajasthan/env": "workspace:*",
+    "better-auth": "catalog:",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@tiv-rajasthan/config": "workspace:*",
+    "typescript": "catalog:"
+  }
+}

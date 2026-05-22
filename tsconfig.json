@@ -1,0 +1,6 @@
+{
+  "extends": "@tiv-rajasthan/config/tsconfig.base.json",
+  "compilerOptions": {
+    "strictNullChecks": true
+  }
+}

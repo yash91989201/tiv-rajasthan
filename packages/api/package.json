@@ -1,0 +1,28 @@
+{
+  "name": "@tiv-rajasthan/api",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {},
+  "dependencies": {
+    "@orpc/client": "catalog:",
+    "@orpc/openapi": "catalog:",
+    "@orpc/server": "catalog:",
+    "@orpc/zod": "catalog:",
+    "@tiv-rajasthan/auth": "workspace:*",
+    "@tiv-rajasthan/db": "workspace:*",
+    "@tiv-rajasthan/env": "workspace:*",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@tiv-rajasthan/config": "workspace:*",
+    "typescript": "catalog:"
+  }
+}
