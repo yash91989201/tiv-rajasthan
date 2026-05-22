@@ -17,7 +17,7 @@ COPY packages/env/package.json ./packages/env/
 COPY packages/ui/package.json ./packages/ui/
 
 # Install dependencies including devDependencies for the build
-RUN bun install --frozen-lockfile
+RUN bun install
 
 # Stage 2: Build the application
 FROM base AS builder
