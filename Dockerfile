@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # Use the official Bun image
-FROM oven/bun:1.1 AS base
+FROM oven/bun:1.3.14 AS base
 WORKDIR /app
 
 # Stage 1: Install dependencies
