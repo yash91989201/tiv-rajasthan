@@ -46,13 +46,26 @@ export default function LuxuryStayPreview() {
 						{properties.map((property) => (
 							<article className="stay-card group" key={property.name}>
 								<div>
-									<p className="mb-3 font-sans text-muted-foreground text-xs uppercase tracking-[0.22em]">{property.location}</p>
-									<h3 className="font-heading text-[clamp(2.3rem,4vw,4.9rem)] leading-[0.86] tracking-[-0.05em]">{property.name}</h3>
+									<p className="mb-3 font-sans text-primary/88 text-xs uppercase tracking-[0.22em]">
+										{property.location}
+									</p>
+									<h3 className="font-heading text-[clamp(2.3rem,4vw,4.9rem)] leading-[0.86] tracking-[-0.05em]">
+										{property.name}
+									</h3>
 								</div>
 								<div className="stay-image relative">
-									<img alt={property.name} className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" height={900} src={property.image} width={720} />
+									<img
+										alt={property.name}
+										className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+										height={900}
+										src={property.image}
+										width={720}
+									/>
+									<div className="absolute inset-0 bg-gradient-to-t from-foreground/46 via-transparent to-primary/14" />
 								</div>
-								<p className="font-sans text-muted-foreground text-sm leading-relaxed">{property.description}</p>
+								<p className="font-sans text-primary/90 text-sm leading-relaxed">
+									{property.description}
+								</p>
 							</article>
 						))}
 					</div>

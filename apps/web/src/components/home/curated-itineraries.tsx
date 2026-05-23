@@ -75,69 +75,77 @@ export default function CuratedItineraries() {
 					</ScrollReveal>
 				</div>
 
-				<div className="space-y-7">
-					{itineraries.map((itinerary, index) => (
-						<ScrollReveal delay={index * 0.12} key={itinerary.title}>
-							<article className="group grid gap-0 overflow-hidden border border-foreground/10 bg-background lg:grid-cols-12">
-								<div className="relative min-h-80 overflow-hidden lg:col-span-5">
-									<img
-										alt={itinerary.title}
-										className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-										height={700}
-										src={itinerary.image}
-										width={900}
-									/>
-								</div>
+				<div className="itinerary-alternating-list space-y-7">
+					{itineraries.map((itinerary, index) => {
+						const isOddCard = index % 2 === 0;
 
-								<div className="p-6 sm:p-8 lg:col-span-7 lg:p-10 xl:p-12">
-									<div className="mb-8 flex flex-wrap gap-x-6 gap-y-3 font-sans text-muted-foreground text-sm">
-										<span className="inline-flex items-center gap-2">
-											<IconClock className="h-4 w-4" strokeWidth={1.5} />
-											{itinerary.duration}
-										</span>
-										<span className="inline-flex items-center gap-2">
-											<IconMapPin className="h-4 w-4" strokeWidth={1.5} />
-											{itinerary.destinations}
-										</span>
+						return (
+							<ScrollReveal delay={index * 0.12} key={itinerary.title}>
+								<article
+									className={`group grid overflow-hidden border border-foreground/10 bg-background lg:grid-cols-12 ${
+										isOddCard ? "itinerary-card-odd" : "itinerary-card-even"
+									}`}
+								>
+									<div className="itinerary-image relative min-h-80 overflow-hidden lg:col-span-5">
+										<img
+											alt={itinerary.title}
+											className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+											height={700}
+											src={itinerary.image}
+											width={900}
+										/>
 									</div>
 
-									<div className="grid gap-8 lg:grid-cols-7 lg:items-start">
-										<div className="lg:col-span-3">
-											<p className="mb-3 font-sans text-primary text-xs uppercase tracking-[0.22em]">
-												{itinerary.theme}
-											</p>
-											<h3 className="font-heading text-[clamp(2.8rem,6vw,6.4rem)] leading-[0.84] tracking-[-0.055em]">
-												{itinerary.title}
-											</h3>
+									<div className="itinerary-content lg:col-span-7">
+										<div className="mb-8 flex flex-wrap gap-x-6 gap-y-3 font-sans text-muted-foreground text-sm">
+											<span className="inline-flex items-center gap-2">
+												<IconClock className="h-4 w-4" strokeWidth={1.5} />
+												{itinerary.duration}
+											</span>
+											<span className="inline-flex items-center gap-2">
+												<IconMapPin className="h-4 w-4" strokeWidth={1.5} />
+												{itinerary.destinations}
+											</span>
 										</div>
 
-										<div className="lg:col-span-4">
-											<ul className="space-y-4 border-foreground/10 border-t pt-6">
-												{itinerary.experiences.map((experience) => (
-													<li
-														className="font-sans text-muted-foreground text-sm leading-relaxed"
-														key={experience}
-													>
-														{experience}
-													</li>
-												))}
-											</ul>
-											<a
-												className="mt-8 inline-flex items-center gap-2 font-sans font-semibold text-foreground text-xs uppercase tracking-[0.22em] transition-colors hover:text-primary"
-												href="/itineraries"
-											>
-												Explore This Journey
-												<IconArrowNarrowRight
-													className="h-4 w-4"
-													strokeWidth={1.5}
-												/>
-											</a>
+										<div className="grid gap-8 lg:grid-cols-7 lg:items-start">
+											<div className="lg:col-span-3">
+												<p className="mb-3 font-sans text-primary text-xs uppercase tracking-[0.22em]">
+													{itinerary.theme}
+												</p>
+												<h3 className="font-heading text-[clamp(2.8rem,6vw,6.4rem)] leading-[0.84] tracking-[-0.055em]">
+													{itinerary.title}
+												</h3>
+											</div>
+
+											<div className="lg:col-span-4">
+												<ul className="space-y-4 border-foreground/10 border-t pt-6">
+													{itinerary.experiences.map((experience) => (
+														<li
+															className="font-sans text-muted-foreground text-sm leading-relaxed"
+															key={experience}
+														>
+															{experience}
+														</li>
+													))}
+												</ul>
+												<a
+													className="mt-8 inline-flex items-center gap-2 font-sans font-semibold text-foreground text-xs uppercase tracking-[0.22em] transition-colors hover:text-primary"
+													href="/itineraries"
+												>
+													Explore This Journey
+													<IconArrowNarrowRight
+														className="h-4 w-4"
+														strokeWidth={1.5}
+													/>
+												</a>
+											</div>
 										</div>
 									</div>
-								</div>
-							</article>
-						</ScrollReveal>
-					))}
+								</article>
+							</ScrollReveal>
+						);
+					})}
 				</div>
 			</div>
 		</section>
