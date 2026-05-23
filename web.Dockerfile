@@ -13,8 +13,6 @@ COPY packages/env/package.json packages/env/
 COPY packages/db/package.json packages/db/
 COPY packages/auth/package.json packages/auth/
 COPY packages/api/package.json packages/api/
-COPY packages/permission/package.json packages/permission/
-COPY packages/infrastructure/package.json packages/infrastructure/
 COPY packages/ui/package.json packages/ui/
 COPY apps/web/package.json apps/web/
 
@@ -32,8 +30,6 @@ COPY packages/env packages/env
 COPY packages/db packages/db
 COPY packages/auth packages/auth
 COPY packages/api packages/api
-COPY packages/permission packages/permission
-COPY packages/infrastructure packages/infrastructure
 COPY packages/ui packages/ui
 COPY apps/web apps/web
 
