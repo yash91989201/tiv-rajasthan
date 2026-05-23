@@ -129,6 +129,70 @@
 	}
 }
 
+/* Destinations: Horizontal rail layout */
+.rail-field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.rail-field .rail-card {
+	position: relative;
+	display: grid;
+	grid-template-columns: 1.1fr 1fr;
+	min-height: 22rem;
+	overflow: hidden;
+	background: hsl(var(--background) / 0.06);
+}
+
+.rail-field .rail-card:nth-child(even) {
+	direction: rtl;
+}
+
+.rail-field .rail-card:nth-child(even) > * {
+	direction: ltr;
+}
+
+.rail-field .rail-idx {
+	position: absolute;
+	top: 1.5rem;
+	left: 1.5rem;
+	z-index: 2;
+	font-family: var(--font-heading);
+	font-size: clamp(4rem, 8vw, 8rem);
+	line-height: 0.8;
+	color: hsl(var(--background) / 0.18);
+	mix-blend-mode: soft-light;
+}
+
+.rail-field .rail-img {
+	position: relative;
+	overflow: hidden;
+}
+
+.rail-field .rail-panel {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: clamp(2rem, 4vw, 3.5rem);
+	border-top: 1px solid hsl(var(--primary) / 0.28);
+	background: hsl(var(--foreground) / 0.03);
+}
+
+@media (max-width: 900px) {
+	.rail-field .rail-card {
+		grid-template-columns: 1fr;
+	}
+
+	.rail-field .rail-card:nth-child(even) {
+		direction: ltr;
+	}
+
+	.rail-field .rail-panel {
+		padding: 1.75rem;
+	}
+}
+
 .experience-cinematic-notes {
 	display: grid;
 	grid-template-columns: 1.55fr 0.9fr;

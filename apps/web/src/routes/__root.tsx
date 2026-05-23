@@ -53,7 +53,10 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
 				{env.VITE_ENV === "dev" && (
 					<script src="http://localhost:8400/live.js" />
 				)}
-			</body>
+			{/* impeccable-live-start */}
+<script src="http://localhost:8400/live.js"></script>
+{/* impeccable-live-end */}
+</body>
 		</html>
 	),
 	component: RootDocument,

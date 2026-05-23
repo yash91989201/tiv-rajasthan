@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DestinationsIndexRouteImport } from './routes/destinations/index'
 import { Route as ApiRpcSplatRouteImport } from './routes/api/rpc/$'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DestinationsIndexRoute = DestinationsIndexRouteImport.update({
+  id: '/destinations/',
+  path: '/destinations/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiRpcSplatRoute = ApiRpcSplatRouteImport.update({
@@ -31,30 +37,34 @@ const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/destinations/': typeof DestinationsIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/rpc/$': typeof ApiRpcSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/destinations': typeof DestinationsIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/rpc/$': typeof ApiRpcSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/destinations/': typeof DestinationsIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/rpc/$': typeof ApiRpcSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api/auth/$' | '/api/rpc/$'
+  fullPaths: '/' | '/destinations/' | '/api/auth/$' | '/api/rpc/$'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api/auth/$' | '/api/rpc/$'
-  id: '__root__' | '/' | '/api/auth/$' | '/api/rpc/$'
+  to: '/' | '/destinations' | '/api/auth/$' | '/api/rpc/$'
+  id: '__root__' | '/' | '/destinations/' | '/api/auth/$' | '/api/rpc/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DestinationsIndexRoute: typeof DestinationsIndexRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   ApiRpcSplatRoute: typeof ApiRpcSplatRoute
 }
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/destinations/': {
+      id: '/destinations/'
+      path: '/destinations'
+      fullPath: '/destinations/'
+      preLoaderRoute: typeof DestinationsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/rpc/$': {
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DestinationsIndexRoute: DestinationsIndexRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   ApiRpcSplatRoute: ApiRpcSplatRoute,
 }
