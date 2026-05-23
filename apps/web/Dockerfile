@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.7
 
-FROM oven/bun:1.3.13-slim AS builder
+FROM oven/bun:1.3.14-slim AS builder
 
 WORKDIR /app
 
@@ -18,7 +18,7 @@ COPY apps/web/package.json apps/web/
 
 # Install all deps needed to build (including dev deps)
 RUN --mount=type=cache,target=/root/.bun/install/cache \
-  bun install
+  bun install --frozen-lockfile
 
 # @vitejs/plugin-rsc uses fs.renameSync for RSC temp output. Docker overlayfs can
 # throw EXDEV for that rename, so add a copy+remove fallback inside the image.
@@ -39,11 +39,26 @@ ENV NODE_ENV=production
 WORKDIR /app/apps/web
 RUN bun run build
 
-FROM oven/bun:1.3.13-slim AS runtime
+FROM oven/bun:1.3.14-slim AS runtime
+
+WORKDIR /app
+
+# Install production dependencies in the runtime image instead of copying
+# builder node_modules. This repo uses Bun's isolated linker, so node_modules
+# entries point at Bun's install cache and are not safely copyable on their own.
+COPY package.json bun.lock bunfig.toml ./
+COPY packages/config/package.json packages/config/
+COPY packages/env/package.json packages/env/
+COPY packages/db/package.json packages/db/
+COPY packages/auth/package.json packages/auth/
+COPY packages/api/package.json packages/api/
+COPY packages/ui/package.json packages/ui/
+COPY apps/web/package.json apps/web/
+RUN --mount=type=cache,target=/root/.bun/install/cache \
+  bun install --production --frozen-lockfile
 
 WORKDIR /app/apps/web
 
-# Runtime only needs built output and the Bun server entrypoint.
 COPY --from=builder /app/apps/web/dist ./dist
 COPY --from=builder /app/apps/web/server.ts ./server.ts
 
