@@ -10,7 +10,7 @@ const destinations = [
 		description:
 			"Where maharaja palaces meet living craft traditions. Explore the Hawa Mahal at dawn, wander through centuries-old bazaars, and dine in restored royal residences.",
 		image:
-			"https://images.unsplash.com/photo-1566837459921-1e92417a8049?q=80&w=1200&auto=format&fit=crop",
+			"https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=1200&auto=format&fit=crop",
 	},
 	{
 		name: "Udaipur",
@@ -18,7 +18,7 @@ const destinations = [
 		description:
 			"Venice of the East, reimagined. Float across Lake Pichola at sunset, explore island palaces, and discover why Udaipur has seduced travellers for centuries.",
 		image:
-			"https://images.unsplash.com/photo-1529257414772-4d3f55a31401?q=80&w=1200&auto=format&fit=crop",
+			"https://images.pexels.com/photos/3881104/pexels-photo-3881104.jpeg?auto=compress&cs=tinysrgb&w=1200",
 	},
 	{
 		name: "Jaisalmer",
@@ -26,7 +26,7 @@ const destinations = [
 		description:
 			"A sandstone citadel rising from the Thar Desert. Sleep under stars in luxury desert camps, explore living fort lanes, and watch the dunes turn gold at dusk.",
 		image:
-			"https://images.unsplash.com/photo-1609766418204-06aae61a0d34?q=80&w=1200&auto=format&fit=crop",
+			"https://images.pexels.com/photos/3581368/pexels-photo-3581368.jpeg?auto=compress&cs=tinysrgb&w=1200",
 	},
 	{
 		name: "Ranthambore",
@@ -34,7 +34,7 @@ const destinations = [
 		description:
 			"Where tigers roam among ancient ruins. A rare blend of wildlife drama and archaeological wonder — dawn safaris, fort ruins, and the raw beauty of nature.",
 		image:
-			"https://images.unsplash.com/photo-1506905921196-a0e9eca0ae2a?q=80&w=1200&auto=format&fit=crop",
+			"https://images.pexels.com/photos/7846476/pexels-photo-7846476.jpeg?auto=compress&cs=tinysrgb&w=1200",
 	},
 ] as const;
 

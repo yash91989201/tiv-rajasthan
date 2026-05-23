@@ -9,7 +9,7 @@ const experiences = [
 		description:
 			"Dine by candlelight in centuries-old courtyards, where royal recipes are served on silver thali by descendants of palace kitchens.",
 		image:
-			"https://images.unsplash.com/photo-1414235077428-338989a0f6be?q=80&w=1200&auto=format&fit=crop",
+			"https://images.pexels.com/photos/2413613/pexels-photo-2413613.jpeg?auto=compress&cs=tinysrgb&w=1200",
 		featured: true,
 	},
 	{
@@ -25,7 +25,7 @@ const experiences = [
 		description:
 			"Intimate guided journeys through living forts and havelis with historians and local artisans.",
 		image:
-			"https://images.unsplash.com/photo-1548013146-7247976b3d63?q=80&w=1200&auto=format&fit=crop",
+			"https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop",
 		featured: false,
 	},
 	{
@@ -41,7 +41,7 @@ const experiences = [
 		description:
 			"Ancient Ayurvedic therapies and yoga in palace settings overlooking lakes and gardens.",
 		image:
-			"https://images.unsplash.com/photo-1540555700256-c28f5d40f238?q=80&w=1200&auto=format&fit=crop",
+			"https://images.pexels.com/photos/3225528/pexels-photo-3225528.jpeg?auto=compress&cs=tinysrgb&w=1200",
 		featured: false,
 	},
 ] as const;

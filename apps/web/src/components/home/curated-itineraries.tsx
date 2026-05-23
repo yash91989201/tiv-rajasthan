@@ -16,7 +16,7 @@ const itineraries = [
 			"Sunrise boat ride on Lake Pichola",
 		],
 		image:
-			"https://images.unsplash.com/photo-1535136029863-4a3e36f07c28?q=80&w=1200&auto=format&fit=crop",
+			"https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=1200&auto=format&fit=crop",
 	},
 	{
 		title: "Desert & Heritage",
@@ -29,7 +29,7 @@ const itineraries = [
 			"Camel safari at golden hour",
 		],
 		image:
-			"https://images.unsplash.com/photo-1609766418204-06aae61a0d34?q=80&w=1200&auto=format&fit=crop",
+			"https://images.pexels.com/photos/3581368/pexels-photo-3581368.jpeg?auto=compress&cs=tinysrgb&w=1200",
 	},
 	{
 		title: "Wildlife & Wellness",
@@ -42,7 +42,7 @@ const itineraries = [
 			"Sunrise meditation at Pushkar ghats",
 		],
 		image:
-			"https://images.unsplash.com/photo-1540555700256-c28f5d40f238?q=80&w=1200&auto=format&fit=crop",
+			"https://images.pexels.com/photos/7846476/pexels-photo-7846476.jpeg?auto=compress&cs=tinysrgb&w=1200",
 	},
 ] as const;
 

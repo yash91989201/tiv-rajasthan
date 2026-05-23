@@ -44,7 +44,7 @@ export default function EditorialIntro() {
 						alt="Rajasthan architecture detail"
 						aspectRatio="3/4"
 						className="rounded-lg"
-						src="https://images.unsplash.com/photo-1548013146-7247976b3d63?q=80&w=1200&auto=format&fit=crop"
+						src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop"
 					/>
 				</ScrollReveal>
 			</div>

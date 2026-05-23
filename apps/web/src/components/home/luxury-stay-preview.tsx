@@ -18,7 +18,7 @@ const properties = [
 		description:
 			"A desert fort hotel where every corridor tells a story. Private thar expeditions, folk performances, and starlit courtyard dining.",
 		image:
-			"https://images.unsplash.com/photo-1529257414772-4d3f55a31401?q=80&w=1200&auto=format&fit=crop",
+			"https://images.pexels.com/photos/3581368/pexels-photo-3581368.jpeg?auto=compress&cs=tinysrgb&w=1200",
 	},
 	{
 		name: "Taj Lake Palace",
@@ -26,7 +26,7 @@ const properties = [
 		description:
 			"Floating marble palace on Lake Pichola. Exclusive boat transfers, rooftop terraces, and the most romantic address in India.",
 		image:
-			"https://images.unsplash.com/photo-1566837459921-1e92417a8049?q=80&w=1200&auto=format&fit=crop",
+			"https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1200",
 	},
 ] as const;
 

@@ -10,7 +10,7 @@ export default function HeroSection() {
 			<ParallaxImage
 				className="absolute inset-0"
 				speed={0.3}
-				src="https://images.unsplash.com/photo-1535136029863-4a3e36f07c28?q=80&w=2400&auto=format&fit=crop"
+				src="https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=2400&auto=format&fit=crop"
 			/>
 
 			<div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60" />
