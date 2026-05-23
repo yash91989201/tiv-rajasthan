@@ -5,61 +5,45 @@ import ScrollReveal from "./scroll-reveal";
 
 const experiences = [
 	{
-		title: "Private Palace Dining",
+		title: "Dinner after the doors close",
 		description:
-			"Candlelit courtyards, silver thali service, and recipes carried through families attached to palace kitchens.",
+			"A courtyard lit low, silver thali service, and dishes remembered by families who have cooked inside these walls for generations.",
 		image:
 			"https://images.pexels.com/photos/2413613/pexels-photo-2413613.jpeg?auto=compress&cs=tinysrgb&w=1200",
 		label: "After dark",
 	},
 	{
-		title: "Desert Camps",
+		title: "A camp with no performance",
 		description:
-			"Canvas suites beneath hard stars, folk music by fire, and the midnight quiet of the Thar held without spectacle.",
+			"Canvas suites under hard stars, music close to the fire, and the Thar at midnight left alone enough to be felt.",
 		image:
 			"https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1200&auto=format&fit=crop",
 		label: "Open sky",
 	},
 	{
-		title: "Heritage Walks",
+		title: "Walks before the city opens",
 		description:
-			"Historians, artisans, and old city residents lead you through living forts and havelis before the crowds arrive.",
+			"Historians, artisans, and old city residents take you through fort lanes while shopkeepers are still washing the stone.",
 		image:
 			"https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop",
 		label: "Before opening",
 	},
 	{
-		title: "Luxury Safaris",
+		title: "The forest at listening hour",
 		description:
-			"Dawn and dusk drives in Ranthambore with naturalists who read the forest by sound, dust, and pause.",
+			"Ranthambore at dawn and dusk with naturalists who read alarm calls, dust, paw marks, and the long pause before movement.",
 		image:
 			"https://images.unsplash.com/photo-1544984243-ec57ea16fe25?q=80&w=1200&auto=format&fit=crop",
 		label: "Forest hour",
 	},
 	{
-		title: "Wellness Retreats",
+		title: "Recovery without theatre",
 		description:
-			"Ayurvedic therapies, yoga, and lake-facing quiet in palace settings designed for recovery rather than performance.",
+			"Ayurvedic therapies, gentle practice, and lake-facing quiet arranged for recovery, not for the photograph of recovery.",
 		image:
 			"https://images.pexels.com/photos/3225528/pexels-photo-3225528.jpeg?auto=compress&cs=tinysrgb&w=1200",
 		label: "Stillness",
 	},
-] as const;
-
-const layoutClasses = [
-	"lg:col-span-7 lg:row-span-2",
-	"lg:col-span-5 lg:col-start-8 lg:mt-20",
-	"lg:col-span-4 lg:col-start-2",
-	"lg:col-span-4",
-	"lg:col-span-4",
-] as const;
-
-const aspectClasses = [
-	"aspect-[5/6] lg:aspect-[6/7]",
-	"aspect-[4/3]",
-	"aspect-[4/5]",
-	"aspect-[4/5]",
-	"aspect-[4/5]",
 ] as const;
 
 export default function SignatureExperiences() {
@@ -71,13 +55,13 @@ export default function SignatureExperiences() {
 					<div className="lg:col-span-8">
 						<ScrollReveal>
 							<p className="mb-5 font-sans text-muted-foreground text-xs uppercase tracking-[0.28em]">
-								Experiences
+								What stays with you
 							</p>
 						</ScrollReveal>
 						<StaggerText
 							as="h2"
 							className="max-w-5xl font-heading text-[clamp(3.4rem,8vw,8.5rem)] leading-[0.88] tracking-[-0.055em]"
-							text="One memory per fold"
+							text="The day should have one thing it remembers"
 						/>
 					</div>
 					<ScrollReveal
@@ -85,13 +69,12 @@ export default function SignatureExperiences() {
 						delay={0.18}
 					>
 						<p className="font-sans text-base text-muted-foreground leading-relaxed">
-							We avoid the brochure list. Each experience is treated like a
-							scene, paced by light, privacy, texture, and the people who make
-							it possible.
+							The most memorable days are usually quiet in shape: a door opened
+							at the right hour, a table set away from the room, a road taken
+							because the light asked for it.
 						</p>
 					</ScrollReveal>
 				</div>
-
 
 				<div className="experience-cinematic-notes">
 					{experiences.map((experience) => (
@@ -105,7 +88,7 @@ export default function SignatureExperiences() {
 							/>
 							<div className="absolute inset-0 bg-gradient-to-t from-foreground/94 via-foreground/42 to-transparent" />
 							<div className="experience-panel">
-								<p className="mb-3 font-sans text-xs text-primary/85 uppercase tracking-[0.24em]">
+								<p className="mb-3 font-sans text-primary/85 text-xs uppercase tracking-[0.24em]">
 									{experience.label}
 								</p>
 								<h3 className="font-heading text-[clamp(2rem,4vw,4.8rem)] text-background leading-[0.88] tracking-[-0.045em]">
@@ -118,8 +101,6 @@ export default function SignatureExperiences() {
 						</article>
 					))}
 				</div>
-
-
 			</div>
 		</section>
 	);

@@ -1,14 +1,11 @@
 "use client";
 
-import { StaggerText } from "./motion-utils";
-import ScrollReveal from "./scroll-reveal";
-
 const properties = [
 	{
 		name: "Samode Palace",
 		location: "Samode, near Jaipur",
 		description:
-			"A 475-year-old palace with frescoed courtyards, mirror-work halls, and private rooftop dinners above the village lights.",
+			"A 475-year-old palace where frescoed courtyards cool after sunset, mirror-work halls glow softly, and dinner can move to the roof above the village.",
 		image:
 			"https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop",
 	},
@@ -16,7 +13,7 @@ const properties = [
 		name: "Suryagarh",
 		location: "Jaisalmer",
 		description:
-			"A desert fort hotel where corridors hold shadow, music, and long Thar expeditions that end around a courtyard table.",
+			"A desert fort hotel of deep corridors, evening music, and Thar drives that return you to a courtyard table before the lamps are lit.",
 		image:
 			"https://images.pexels.com/photos/3581368/pexels-photo-3581368.jpeg?auto=compress&cs=tinysrgb&w=1200",
 	},
@@ -24,7 +21,7 @@ const properties = [
 		name: "Taj Lake Palace",
 		location: "Udaipur",
 		description:
-			"A floating marble address on Lake Pichola, approached by boat and best understood from its quiet terraces at evening.",
+			"A marble address set on Lake Pichola, reached by boat and understood slowly from a terrace when the water turns silver.",
 		image:
 			"https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1200",
 	},
@@ -37,10 +34,17 @@ export default function LuxuryStayPreview() {
 				<div className="stay-horizontal-cinema">
 					<div className="stay-header">
 						<div>
-							<p className="mb-5 font-sans text-muted-foreground text-xs uppercase tracking-[0.28em]">Hospitality</p>
-							<h2 className="font-heading text-[clamp(3.2rem,6.6vw,7.1rem)] leading-[0.84] tracking-[-0.055em]">Sleep inside the story</h2>
+							<p className="mb-5 font-sans text-muted-foreground text-xs uppercase tracking-[0.28em]">
+								Where you stay
+							</p>
+							<h2 className="font-heading text-[clamp(3.2rem,6.6vw,7.1rem)] leading-[0.84] tracking-[-0.055em]">
+								The room is part of the itinerary
+							</h2>
 						</div>
-						<p className="max-w-md font-sans text-base text-muted-foreground leading-relaxed">We choose rooms for atmosphere, not category. The right stay changes how a destination behaves around you.</p>
+						<p className="max-w-md font-sans text-base text-muted-foreground leading-relaxed">
+							A hotel is never just the place between excursions. It decides
+							your mornings, your silences, and the way a city enters the room.
+						</p>
 					</div>
 					<div className="stay-rail">
 						{properties.map((property) => (

@@ -13,27 +13,27 @@ import ScrollReveal from "./scroll-reveal";
 const reasons = [
 	{
 		icon: IconMap,
-		title: "Personalized Planning",
+		title: "Planning that listens first",
 		description:
-			"No two journeys are alike. We listen first, then shape every detail around your interests and pace.",
+			"We ask how you like to wake, eat, wander, pause, and disappear for a while. The itinerary follows from there.",
 	},
 	{
 		icon: IconStar,
-		title: "Handpicked Stays",
+		title: "Rooms chosen for feeling",
 		description:
-			"Every property is vetted for character, atmosphere, service, and the feeling it leaves at checkout.",
+			"We care about the corridor at night, the breakfast table, the view from the bath, and whether service knows when to step back.",
 	},
 	{
 		icon: IconHeartHandshake,
-		title: "Private Access",
+		title: "Access with discretion",
 		description:
-			"After-hours palace visits, private safaris, and dinners in rooms usually reserved for family histories.",
+			"After-hours visits, private safaris, and family-held rooms are arranged quietly, with no theatre around the privilege.",
 	},
 	{
 		icon: IconUsers,
-		title: "Seamless Coordination",
+		title: "The invisible work",
 		description:
-			"A dedicated travel designer manages the invisible parts, so the journey feels unhurried from arrival to return.",
+			"Cars arrive before you think of them. Guides know the day’s mood. Plans change without making the change your problem.",
 	},
 ] as const;
 
@@ -45,13 +45,13 @@ export default function WhyChooseUs() {
 					<div className="lg:col-span-5">
 						<ScrollReveal>
 							<p className="mb-5 font-sans text-background/55 text-xs uppercase tracking-[0.28em]">
-								Why Us
+								How we hold it
 							</p>
 						</ScrollReveal>
 						<StaggerText
 							as="h2"
 							className="font-heading text-[clamp(3.4rem,8vw,8rem)] leading-[0.86] tracking-[-0.055em]"
-							text="Quiet care, exacting standards"
+							text="Luxury is usually what did not need explaining"
 						/>
 					</div>
 

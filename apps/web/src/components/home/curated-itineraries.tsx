@@ -10,40 +10,40 @@ import ScrollReveal from "./scroll-reveal";
 
 const itineraries = [
 	{
-		title: "Royal Rajasthan",
+		title: "Palaces without ceremony",
 		duration: "10 Days",
 		destinations: "Jaipur, Udaipur, Jodhpur",
-		theme: "Palaces, forts, royal hospitality",
+		theme: "Private rooms, quiet courts, old cities",
 		experiences: [
-			"Private dinner in a 300-year-old haveli",
-			"Exclusive access to palace quarters",
-			"Sunrise boat ride on Lake Pichola",
+			"Dinner in a 300-year-old haveli after the house settles",
+			"Palace rooms opened with time to linger",
+			"Lake Pichola before the first hotel launches cross",
 		],
 		image:
 			"https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=1200&auto=format&fit=crop",
 	},
 	{
-		title: "Desert & Heritage",
+		title: "The desert taken slowly",
 		duration: "8 Days",
 		destinations: "Jaisalmer, Bikaner, Jodhpur",
-		theme: "Sand dunes, living forts, desert silence",
+		theme: "Living forts, dune light, nights under canvas",
 		experiences: [
-			"Luxury camp under the Thar stars",
-			"Heritage walk through living fort lanes",
-			"Camel safari at golden hour",
+			"A canvas camp placed for stars, not spectacle",
+			"A morning inside fort lanes while the day is being set out",
+			"A slow ride when the sand begins to cool",
 		],
 		image:
 			"https://images.pexels.com/photos/3581368/pexels-photo-3581368.jpeg?auto=compress&cs=tinysrgb&w=1200",
 	},
 	{
-		title: "Wildlife & Wellness",
+		title: "Forest, temples, still water",
 		duration: "7 Days",
 		destinations: "Ranthambore, Pushkar, Jaipur",
-		theme: "Tigers, temples, restorative calm",
+		theme: "Ranthambore, Pushkar, unforced rest",
 		experiences: [
-			"Private dawn safaris with naturalists",
-			"Ayurvedic retreat in palace gardens",
-			"Sunrise meditation at Pushkar ghats",
+			"Dawn drives with naturalists who know when to wait",
+			"Bodywork and rest in shaded palace gardens",
+			"Pushkar at first light, before the microphones begin",
 		],
 		image:
 			"https://images.pexels.com/photos/7846476/pexels-photo-7846476.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -58,19 +58,20 @@ export default function CuratedItineraries() {
 					<div className="lg:col-span-7 lg:col-start-2">
 						<ScrollReveal>
 							<p className="mb-5 font-sans text-muted-foreground text-xs uppercase tracking-[0.28em]">
-								Journeys
+								Possible routes
 							</p>
 						</ScrollReveal>
 						<StaggerText
 							as="h2"
 							className="font-heading text-[clamp(3.4rem,8vw,8rem)] leading-[0.88] tracking-[-0.055em]"
-							text="Routes with a point of view"
+							text="A route should know what to leave out"
 						/>
 					</div>
 					<ScrollReveal className="lg:col-span-3" delay={0.16}>
 						<p className="font-sans text-base text-muted-foreground leading-relaxed">
-							Each itinerary is a narrative arc. Arrival, immersion, release,
-							and return are composed with the same care as the hotels.
+							These are starting points, not fixed programmes. We keep the
+							spine, then adjust the pace, rooms, guides, and empty hours around
+							you.
 						</p>
 					</ScrollReveal>
 				</div>
@@ -133,7 +134,7 @@ export default function CuratedItineraries() {
 													className="mt-8 inline-flex items-center gap-2 font-sans font-semibold text-foreground text-xs uppercase tracking-[0.22em] transition-colors hover:text-primary"
 													href="/itineraries"
 												>
-													Explore This Journey
+													Read the outline
 													<IconArrowNarrowRight
 														className="h-4 w-4"
 														strokeWidth={1.5}

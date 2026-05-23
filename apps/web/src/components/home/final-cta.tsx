@@ -21,7 +21,7 @@ export default function FinalCTA() {
 				<div className="lg:col-span-8 lg:col-start-2">
 					<ScrollReveal>
 						<p className="mb-6 font-sans text-background/60 text-xs uppercase tracking-[0.3em]">
-							Begin Your Journey
+							Begin privately
 						</p>
 					</ScrollReveal>
 
@@ -29,16 +29,16 @@ export default function FinalCTA() {
 						as="h2"
 						className="max-w-5xl font-heading text-[clamp(3.8rem,9vw,9.5rem)] text-background leading-[0.84] tracking-[-0.055em]"
 						delay={0.1}
-						text="Tell us what Rajasthan should feel like"
+						text="Tell us the version of Rajasthan you keep imagining"
 					/>
 				</div>
 
 				<div className="lg:col-span-4 lg:col-start-8 lg:self-end lg:pb-16">
 					<ScrollReveal delay={0.2}>
 						<p className="max-w-md border-background/18 border-t pt-6 font-sans text-background/72 text-base leading-relaxed md:text-lg">
-							Speak with a travel designer about your pace, privacy, and the
-							moments you want to remember. No templates. No pressure. Just a
-							conversation.
+							Tell us what you want more of, what you want to avoid, and how
+							much quiet the trip should protect. We will answer with a
+							considered first shape, not a catalogue.
 						</p>
 					</ScrollReveal>
 
@@ -48,21 +48,21 @@ export default function FinalCTA() {
 								className="inline-flex items-center justify-center gap-2 bg-primary px-8 py-4 font-sans font-semibold text-primary-foreground text-xs uppercase tracking-[0.22em] transition-colors hover:bg-primary/85"
 								href="/contact"
 							>
-								Speak With a Designer
+								Speak with a designer
 								<IconArrowNarrowRight className="h-4 w-4" strokeWidth={1.5} />
 							</a>
 							<a
 								className="inline-flex items-center justify-center border border-background/28 px-8 py-4 font-sans font-semibold text-background text-xs uppercase tracking-[0.22em] transition-colors hover:border-background/60 hover:bg-background/10"
 								href="/itineraries"
 							>
-								Explore Journeys
+								Browse the routes
 							</a>
 						</div>
 					</ScrollReveal>
 
 					<ScrollReveal className="mt-10" delay={0.4}>
 						<p className="font-sans text-background/45 text-xs tracking-[0.16em]">
-							Response within 24 hours. Complimentary consultation.
+							A thoughtful reply within 24 hours. Consultation is complimentary.
 						</p>
 					</ScrollReveal>
 				</div>

@@ -6,50 +6,36 @@ import ScrollReveal from "./scroll-reveal";
 const destinations = [
 	{
 		name: "Jaipur",
-		subtitle: "The Pink City",
+		subtitle: "Before the city blushes",
 		description:
-			"Dawn at Hawa Mahal, private ateliers before the shutters rise, and dinner in restored royal rooms once the city turns rose again.",
+			"Hawa Mahal before the pavement warms, jewel ateliers with the shutters half raised, and dinner where frescoed walls keep their own counsel.",
 		image:
 			"https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=1200&auto=format&fit=crop",
 	},
 	{
 		name: "Udaipur",
-		subtitle: "City of Lakes",
+		subtitle: "Water, marble, hush",
 		description:
-			"Lake Pichola by boat, marble terraces at blue hour, and a slower rhythm made for people who notice reflected light.",
+			"A boat crossing before aperitif hour, marble still holding the day, and evenings for people who notice how a city doubles itself in water.",
 		image:
 			"https://images.pexels.com/photos/3881104/pexels-photo-3881104.jpeg?auto=compress&cs=tinysrgb&w=1200",
 	},
 	{
 		name: "Jaisalmer",
-		subtitle: "The Golden Fort",
+		subtitle: "Sandstone after heat",
 		description:
-			"A living citadel rising from the Thar, followed by canvas, firelight, folk songs, and the kind of silence cities cannot stage.",
+			"A living fort above the Thar, then canvas, fire, songs passed between families, and the dense silence that arrives after the wind drops.",
 		image:
 			"https://images.pexels.com/photos/3581368/pexels-photo-3581368.jpeg?auto=compress&cs=tinysrgb&w=1200",
 	},
 	{
 		name: "Ranthambore",
-		subtitle: "Wilderness & Heritage",
+		subtitle: "The forest keeps score",
 		description:
-			"Tiger country with ruined pavilions, early drives, long lunches, and evenings held close to the edge of the forest.",
+			"Early drives through tiger country, ruined pavilions in the scrub, lunch that refuses to hurry, and dusk kept close to the forest line.",
 		image:
 			"https://images.pexels.com/photos/7846476/pexels-photo-7846476.jpeg?auto=compress&cs=tinysrgb&w=1200",
 	},
-] as const;
-
-const destinationLayouts = [
-	"lg:col-span-7 lg:row-span-2",
-	"lg:col-span-4 lg:col-start-9 lg:mt-24",
-	"lg:col-span-4 lg:col-start-2 lg:-mt-12",
-	"lg:col-span-6 lg:col-start-7",
-] as const;
-
-const destinationAspects = [
-	"aspect-[5/6] lg:aspect-[7/8]",
-	"aspect-[4/5]",
-	"aspect-[6/4]",
-	"aspect-[16/10]",
 ] as const;
 
 export default function FeaturedDestinations() {
@@ -60,19 +46,19 @@ export default function FeaturedDestinations() {
 					<div className="lg:col-span-7">
 						<ScrollReveal>
 							<p className="mb-5 font-sans text-background/55 text-xs uppercase tracking-[0.28em]">
-								Destinations
+								Places, in tempo
 							</p>
 						</ScrollReveal>
 						<StaggerText
 							as="h2"
 							className="max-w-4xl font-heading text-[clamp(3.4rem,8vw,8rem)] leading-[0.88] tracking-[-0.05em]"
-							text="Four moods of one kingdom"
+							text="One state, four kinds of silence"
 						/>
 					</div>
 					<ScrollReveal className="lg:col-span-3 lg:col-start-10" delay={0.16}>
 						<p className="border-background/16 border-t pt-6 font-sans text-background/66 text-base leading-relaxed">
-							We arrange Rajasthan as a sequence of distinct atmospheres: city,
-							lake, desert, forest. Each place gets its own tempo.
+							Jaipur, Udaipur, Jaisalmer, Ranthambore. We do not flatten them
+							into one royal postcard. Each place asks for a different hour.
 						</p>
 					</ScrollReveal>
 				</div>

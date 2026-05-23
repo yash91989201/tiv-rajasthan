@@ -28,7 +28,7 @@ export default function HeroSection() {
 						viewport={{ once: true }}
 						whileInView={{ opacity: 1, y: 0 }}
 					>
-						Private Rajasthan, edited with restraint
+						Rajasthan, held quietly for you
 					</motion.p>
 
 					<StaggerText
@@ -36,7 +36,7 @@ export default function HeroSection() {
 						className="max-w-5xl font-heading text-[clamp(4.4rem,12vw,11rem)] text-background leading-[0.82] tracking-[-0.055em]"
 						delay={0.3}
 						staggerDelay={0.07}
-						text="Enter the royal interior"
+						text="Come in after the gates close"
 					/>
 				</div>
 
@@ -48,23 +48,23 @@ export default function HeroSection() {
 					whileInView={{ opacity: 1, y: 0 }}
 				>
 					<p className="max-w-md font-sans text-background/72 text-base leading-relaxed md:text-lg">
-						A quieter way through Rajasthan: palace rooms opened after hours,
-						desert dinners timed to the last amber light, and journeys composed
-						around your natural pace.
+						Arrive when the courtyards have emptied, stay for the light that
+						tour groups miss, and let each day move at the speed your body
+						actually wants.
 					</p>
 					<div className="mt-9 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
 						<a
 							className="inline-flex items-center justify-center gap-2 bg-primary px-7 py-4 font-sans font-semibold text-primary-foreground text-xs uppercase tracking-[0.22em] transition-colors hover:bg-primary/85"
 							href="/contact"
 						>
-							Design Your Journey
+							Begin the conversation
 							<IconArrowNarrowRight className="h-4 w-4" strokeWidth={1.5} />
 						</a>
 						<a
 							className="inline-flex items-center justify-center border border-background/28 px-7 py-4 font-sans font-semibold text-background text-xs uppercase tracking-[0.22em] transition-colors hover:border-background/60 hover:bg-background/10"
 							href="/destinations"
 						>
-							View the Route
+							See where we go
 						</a>
 					</div>
 				</motion.div>
