@@ -1,0 +1,28 @@
+{
+  "id": "28361231",
+  "phase": "completed",
+  "pageUrl": "/",
+  "sourceFile": "apps/web/src/components/home/luxury-stay-preview.tsx",
+  "expectedVariants": 3,
+  "arrivedVariants": 3,
+  "visibleVariant": 3,
+  "paramValues": {
+    "density": 1
+  },
+  "pendingEventSeq": null,
+  "pendingEvent": null,
+  "deliveryLease": null,
+  "checkpointRevision": 7,
+  "activeOwner": "2be0ce1f",
+  "sourceMarkers": {},
+  "fallbackMode": null,
+  "annotationArtifacts": [],
+  "diagnostics": [
+    {
+      "error": "carbonize_cleanup_required",
+      "file": "apps/web/src/components/home/luxury-stay-preview.tsx",
+      "message": "Accepted variant still has carbonize markers that must be folded into source CSS."
+    }
+  ],
+  "updatedAt": "2026-05-23T12:10:02.435Z"
+}

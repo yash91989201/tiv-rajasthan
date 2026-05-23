@@ -1,1 +1,130 @@
 @import "@tiv-rajasthan/ui/globals.css";
+
+.stay-horizontal-cinema {
+	display: grid;
+	gap: clamp(2rem, 4vw, 4rem);
+}
+
+.stay-horizontal-cinema .stay-header {
+	display: grid;
+	grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+	gap: clamp(1.5rem, 4vw, 4rem);
+	align-items: end;
+}
+
+.stay-horizontal-cinema .stay-rail {
+	display: grid;
+	grid-template-columns: 1.25fr 0.82fr 0.82fr;
+	gap: clamp(1rem, 2vw, 1.75rem);
+	align-items: end;
+}
+
+.stay-horizontal-cinema .stay-card {
+	display: flex;
+	min-height: 34rem;
+	flex-direction: column;
+	justify-content: space-between;
+	border-top: 1px solid hsl(var(--foreground) / 0.14);
+	padding-top: 1rem;
+}
+
+.stay-horizontal-cinema .stay-card:nth-child(n + 2) {
+	min-height: 27rem;
+}
+
+.stay-horizontal-cinema .stay-image {
+	aspect-ratio: 4 / 5;
+	overflow: hidden;
+}
+
+.stay-horizontal-cinema .stay-card:first-child .stay-image {
+	aspect-ratio: 16 / 11;
+}
+
+@media (max-width: 900px) {
+	.stay-horizontal-cinema .stay-header,
+	.stay-horizontal-cinema .stay-rail {
+		grid-template-columns: 1fr;
+	}
+}
+
+.destinations-numbered-field {
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	gap: clamp(1rem, 2vw, 2rem);
+}
+
+.destinations-numbered-field .destination-card {
+	position: relative;
+	display: grid;
+	min-height: 24rem;
+	overflow: hidden;
+	background: hsl(var(--background) / 0.06);
+}
+
+.destinations-numbered-field .destination-card:nth-child(1),
+.destinations-numbered-field .destination-card:nth-child(4) {
+	grid-column: span 8;
+}
+
+.destinations-numbered-field .destination-card:nth-child(2),
+.destinations-numbered-field .destination-card:nth-child(3) {
+	grid-column: span 4;
+}
+
+.destinations-numbered-field .destination-index {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	z-index: 2;
+	font-family: var(--font-heading);
+	font-size: clamp(3rem, 7vw, 7rem);
+	line-height: 0.8;
+	color: hsl(var(--primary));
+}
+
+.destinations-numbered-field .destination-panel {
+	z-index: 2;
+	align-self: end;
+	margin: 1rem;
+	padding: clamp(1rem, 2vw, 1.5rem);
+	background: hsl(var(--primary) / 0.7);
+	color: hsl(var(--primary-foreground));
+}
+
+@media (max-width: 900px) {
+	.destinations-numbered-field .destination-card:nth-child(n) {
+		grid-column: 1 / -1;
+	}
+}
+
+.experience-cinematic-notes {
+	display: grid;
+	grid-template-columns: 1.55fr 0.9fr;
+	gap: clamp(1rem, 2vw, 2rem);
+}
+
+.experience-cinematic-notes .experience-card {
+	position: relative;
+	min-height: 22rem;
+	overflow: hidden;
+}
+
+.experience-cinematic-notes .experience-card:first-child {
+	grid-row: span 4;
+	min-height: clamp(36rem, 55vw, 54rem);
+}
+
+.experience-cinematic-notes .experience-panel {
+	position: absolute;
+	inset: auto 1rem 1rem;
+	padding: clamp(1rem, 2vw, 1.45rem);
+	background: hsl(var(--primary) / 0.64);
+	color: hsl(var(--primary-foreground));
+}
+
+@media (max-width: 900px) {
+	.experience-cinematic-notes {
+		grid-template-columns: 1fr;
+	}
+}

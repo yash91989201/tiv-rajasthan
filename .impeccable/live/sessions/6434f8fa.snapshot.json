@@ -1,0 +1,22 @@
+{
+  "id": "6434f8fa",
+  "phase": "discarded",
+  "pageUrl": "/",
+  "sourceFile": "apps/web/src/components/home/signature-experiences.tsx",
+  "expectedVariants": 4,
+  "arrivedVariants": 4,
+  "visibleVariant": 1,
+  "paramValues": {
+    "scrim": 0.82
+  },
+  "pendingEventSeq": null,
+  "pendingEvent": null,
+  "deliveryLease": null,
+  "checkpointRevision": 30,
+  "activeOwner": "5d765895",
+  "sourceMarkers": {},
+  "fallbackMode": null,
+  "annotationArtifacts": [],
+  "diagnostics": [],
+  "updatedAt": "2026-05-23T12:25:27.343Z"
+}

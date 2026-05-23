@@ -77,39 +77,18 @@ export default function FeaturedDestinations() {
 					</ScrollReveal>
 				</div>
 
-				<div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
+				<div className="destinations-numbered-field">
 					{destinations.map((destination, index) => (
-						<ScrollReveal
-							className={`group relative ${destinationLayouts[index]}`}
-							delay={index * 0.12}
-							key={destination.name}
-						>
-							<article className="relative">
-								<div
-									className={`relative overflow-hidden ${destinationAspects[index]}`}
-								>
-									<img
-										alt={destination.name}
-										className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-										height={1200}
-										src={destination.image}
-										width={1000}
-									/>
-									<div className="absolute inset-0 bg-gradient-to-t from-foreground/82 via-foreground/18 to-transparent" />
-								</div>
-								<div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 lg:p-10">
-									<p className="mb-3 font-sans text-background/64 text-xs uppercase tracking-[0.24em]">
-										{destination.subtitle}
-									</p>
-									<h3 className="font-heading text-[clamp(2.3rem,5vw,5.5rem)] text-background leading-[0.86] tracking-[-0.045em]">
-										{destination.name}
-									</h3>
-									<p className="mt-4 max-w-md font-sans text-background/72 text-sm leading-relaxed">
-										{destination.description}
-									</p>
-								</div>
-							</article>
-						</ScrollReveal>
+						<article className="destination-card group" key={destination.name}>
+							<span className="destination-index">0{index + 1}</span>
+							<img alt={destination.name} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" height={1200} src={destination.image} width={1000} />
+							<div className="absolute inset-0 bg-foreground/36" />
+							<div className="destination-panel">
+								<p className="mb-3 font-sans text-xs uppercase tracking-[0.24em] opacity-75">{destination.subtitle}</p>
+								<h3 className="font-heading text-[clamp(2.4rem,4.8vw,5.4rem)] leading-[0.84] tracking-[-0.05em]">{destination.name}</h3>
+								<p className="mt-4 max-w-md font-sans text-sm leading-relaxed opacity-80">{destination.description}</p>
+							</div>
+						</article>
 					))}
 				</div>
 			</div>

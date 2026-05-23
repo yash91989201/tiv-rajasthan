@@ -1,0 +1,24 @@
+{
+  "id": "08dc599c",
+  "phase": "accept_requested",
+  "pageUrl": "/",
+  "sourceFile": "apps/web/src/components/home/signature-experiences.tsx",
+  "expectedVariants": 4,
+  "arrivedVariants": 4,
+  "visibleVariant": 3,
+  "paramValues": {},
+  "pendingEventSeq": 18,
+  "pendingEvent": {
+    "type": "accept",
+    "id": "08dc599c",
+    "variantId": "3"
+  },
+  "deliveryLease": null,
+  "checkpointRevision": 15,
+  "activeOwner": "c645fd70",
+  "sourceMarkers": {},
+  "fallbackMode": null,
+  "annotationArtifacts": [],
+  "diagnostics": [],
+  "updatedAt": "2026-05-23T12:35:45.124Z"
+}

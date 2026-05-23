@@ -1,0 +1,28 @@
+{
+  "id": "65fe4630",
+  "phase": "completed",
+  "pageUrl": "/",
+  "sourceFile": "apps/web/src/components/home/featured-destinations.tsx",
+  "expectedVariants": 4,
+  "arrivedVariants": 4,
+  "visibleVariant": 4,
+  "paramValues": {
+    "impact": 0.7
+  },
+  "pendingEventSeq": null,
+  "pendingEvent": null,
+  "deliveryLease": null,
+  "checkpointRevision": 12,
+  "activeOwner": "5d765895",
+  "sourceMarkers": {},
+  "fallbackMode": null,
+  "annotationArtifacts": [],
+  "diagnostics": [
+    {
+      "error": "carbonize_cleanup_required",
+      "file": "apps/web/src/components/home/featured-destinations.tsx",
+      "message": "Accepted variant still has carbonize markers that must be folded into source CSS."
+    }
+  ],
+  "updatedAt": "2026-05-23T12:16:13.389Z"
+}
