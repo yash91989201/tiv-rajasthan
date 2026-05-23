@@ -5,48 +5,58 @@ import ScrollReveal from "./scroll-reveal";
 
 export default function EditorialIntro() {
 	return (
-		<section className="container mx-auto px-6 py-20 md:py-32 lg:py-40">
-			<div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-24">
-				<div className="flex flex-col justify-center">
+		<section className="relative overflow-hidden bg-background py-[clamp(5rem,12vw,11rem)]">
+			<div className="pointer-events-none absolute top-12 left-1/2 hidden -translate-x-1/2 font-heading text-[22vw] text-muted/70 leading-none tracking-[-0.08em] lg:block">
+				Belong
+			</div>
+
+			<div className="relative mx-auto grid max-w-[1500px] grid-cols-1 gap-12 px-6 sm:px-10 lg:grid-cols-12 lg:gap-8">
+				<div className="lg:col-span-5 lg:col-start-2 lg:pt-24">
 					<ScrollReveal>
-						<p className="mb-6 font-sans text-muted-foreground text-sm uppercase tracking-[0.2em]">
+						<p className="mb-6 font-sans text-muted-foreground text-xs uppercase tracking-[0.26em]">
 							Our Philosophy
 						</p>
 					</ScrollReveal>
 
 					<StaggerText
 						as="h2"
-						className="max-w-2xl font-heading text-4xl leading-tight md:text-5xl lg:text-6xl"
+						className="max-w-2xl font-heading text-[clamp(3.4rem,7vw,7rem)] leading-[0.9] tracking-[-0.045em]"
 						delay={0.1}
-						text="We believe travel should feel like belonging"
+						text="Travel should feel privately held"
 					/>
+				</div>
 
+				<ScrollReveal className="lg:col-span-4 lg:col-start-8" delay={0.12}>
+					<div className="relative">
+						<div className="absolute -top-6 -left-6 h-28 w-28 bg-primary/15" />
+						<ImageReveal
+							alt="Carved Rajasthan palace arch with warm stone detail"
+							aspectRatio="3/4"
+							className="relative"
+							src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop"
+						/>
+					</div>
+				</ScrollReveal>
+
+				<div className="lg:col-span-4 lg:col-start-3 lg:-mt-28">
 					<ScrollReveal delay={0.2}>
-						<p className="mt-8 max-w-lg font-sans text-base text-muted-foreground leading-relaxed md:text-lg">
-							Every journey we craft is an intimate conversation between you and
-							Rajasthan. Not a package. Not a checklist. A personal narrative
-							shaped around your rhythm, your curiosities, and the stories you
-							carry home.
-						</p>
-					</ScrollReveal>
-
-					<ScrollReveal delay={0.3}>
-						<p className="mt-6 max-w-lg font-sans text-base text-muted-foreground leading-relaxed md:text-lg">
-							From the rose-gold dawn over Jaipur to the candlelit silence of a
-							desert fort, we open doors that remain closed to most — because
-							your experience deserves more than the ordinary.
+						<p className="max-w-lg font-sans text-lg text-muted-foreground leading-relaxed md:text-xl">
+							Every journey is an intimate conversation between you and the
+							landscape. Not a package. Not a checklist. A personal narrative
+							shaped around your pace, curiosities, and rituals of rest.
 						</p>
 					</ScrollReveal>
 				</div>
 
-				<ScrollReveal className="relative" delay={0.2}>
-					<ImageReveal
-						alt="Rajasthan architecture detail"
-						aspectRatio="3/4"
-						className="rounded-lg"
-						src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop"
-					/>
-				</ScrollReveal>
+				<div className="lg:col-span-3 lg:col-start-8 lg:-mt-10">
+					<ScrollReveal delay={0.3}>
+						<p className="max-w-sm border-foreground/10 border-t pt-6 font-sans text-muted-foreground text-sm leading-relaxed">
+							From rose-gold dawn in Jaipur to candlelit silence inside a desert
+							fort, we open the doors that make a place feel entrusted, not
+							consumed.
+						</p>
+					</ScrollReveal>
+				</div>
 			</div>
 		</section>
 	);

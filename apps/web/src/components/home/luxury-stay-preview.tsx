@@ -8,7 +8,7 @@ const properties = [
 		name: "Samode Palace",
 		location: "Samode, near Jaipur",
 		description:
-			"A 475-year-old palace converted into an intimate luxury hotel. Frescoed courtyards, mirror-work halls, and private rooftop dinners.",
+			"A 475-year-old palace with frescoed courtyards, mirror-work halls, and private rooftop dinners above the village lights.",
 		image:
 			"https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop",
 	},
@@ -16,7 +16,7 @@ const properties = [
 		name: "Suryagarh",
 		location: "Jaisalmer",
 		description:
-			"A desert fort hotel where every corridor tells a story. Private thar expeditions, folk performances, and starlit courtyard dining.",
+			"A desert fort hotel where corridors hold shadow, music, and long Thar expeditions that end around a courtyard table.",
 		image:
 			"https://images.pexels.com/photos/3581368/pexels-photo-3581368.jpeg?auto=compress&cs=tinysrgb&w=1200",
 	},
@@ -24,7 +24,7 @@ const properties = [
 		name: "Taj Lake Palace",
 		location: "Udaipur",
 		description:
-			"Floating marble palace on Lake Pichola. Exclusive boat transfers, rooftop terraces, and the most romantic address in India.",
+			"A floating marble address on Lake Pichola, approached by boat and best understood from its quiet terraces at evening.",
 		image:
 			"https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1200",
 	},
@@ -32,64 +32,58 @@ const properties = [
 
 export default function LuxuryStayPreview() {
 	return (
-		<section className="container mx-auto px-6 py-20 md:py-32 lg:py-40">
-			<div className="mb-20 text-center">
-				<ScrollReveal>
-					<p className="mb-4 font-sans text-muted-foreground text-sm uppercase tracking-[0.2em]">
-						Hospitality
-					</p>
-				</ScrollReveal>
-				<StaggerText
-					as="h2"
-					className="mx-auto max-w-3xl font-heading text-4xl md:text-5xl lg:text-6xl"
-					text="Places that stay with you"
-				/>
-				<ScrollReveal delay={0.2}>
-					<p className="mx-auto mt-6 max-w-xl font-sans text-base text-muted-foreground">
-						We handpick stays that transform travel into memory — heritage
-						palaces, boutique forts, and intimate desert camps.
-					</p>
-				</ScrollReveal>
-			</div>
+		<section className="relative overflow-hidden bg-background py-[clamp(5rem,12vw,12rem)]">
+			<div className="mx-auto max-w-[1500px] px-6 sm:px-10">
+				<div className="grid gap-12 lg:grid-cols-12">
+					<div className="lg:sticky lg:top-24 lg:col-span-4 lg:h-fit">
+						<ScrollReveal>
+							<p className="mb-5 font-sans text-muted-foreground text-xs uppercase tracking-[0.28em]">
+								Hospitality
+							</p>
+						</ScrollReveal>
+						<StaggerText
+							as="h2"
+							className="font-heading text-[clamp(3.2rem,7vw,7rem)] leading-[0.88] tracking-[-0.05em]"
+							text="Sleep inside the story"
+						/>
+						<ScrollReveal delay={0.18}>
+							<p className="mt-8 max-w-sm font-sans text-base text-muted-foreground leading-relaxed">
+								We choose rooms for atmosphere, not category. The right stay
+								changes how a destination behaves around you.
+							</p>
+						</ScrollReveal>
+					</div>
 
-			<div className="flex flex-col gap-16">
-				{properties.map((property, index) => (
-					<ScrollReveal
-						className="group"
-						delay={index * 0.15}
-						key={property.name}
-					>
-						<div className="grid items-center gap-8 md:grid-cols-2 md:gap-12 lg:gap-16">
-							<div className={index % 2 === 1 ? "md:order-2" : ""}>
-								<div className="relative aspect-[4/3] overflow-hidden rounded-lg transition-shadow duration-700 group-hover:shadow-2xl">
-									<img
-										alt={property.name}
-										className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-										height={600}
-										src={property.image}
-										width={800}
-									/>
-								</div>
-							</div>
+					<div className="space-y-10 lg:col-span-7 lg:col-start-6">
+						{properties.map((property, index) => (
+							<ScrollReveal delay={index * 0.12} key={property.name}>
+								<article className="group grid gap-6 border-foreground/10 border-t pt-8 md:grid-cols-8 md:items-end">
+									<div className="relative aspect-[4/5] overflow-hidden md:col-span-5">
+										<img
+											alt={property.name}
+											className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+											height={900}
+											src={property.image}
+											width={720}
+										/>
+									</div>
 
-							<div
-								className={`flex flex-col justify-center ${
-									index % 2 === 1 ? "md:order-1" : ""
-								}`}
-							>
-								<p className="mb-2 font-sans text-muted-foreground text-sm uppercase tracking-[0.15em]">
-									{property.location}
-								</p>
-								<h3 className="mb-4 font-heading text-3xl md:text-4xl">
-									{property.name}
-								</h3>
-								<p className="max-w-md font-sans text-base text-muted-foreground leading-relaxed">
-									{property.description}
-								</p>
-							</div>
-						</div>
-					</ScrollReveal>
-				))}
+									<div className="md:col-span-3 md:pb-8">
+										<p className="mb-3 font-sans text-muted-foreground text-xs uppercase tracking-[0.22em]">
+											{property.location}
+										</p>
+										<h3 className="font-heading text-[clamp(2.5rem,5vw,5.2rem)] leading-[0.85] tracking-[-0.05em]">
+											{property.name}
+										</h3>
+										<p className="mt-5 font-sans text-muted-foreground text-sm leading-relaxed">
+											{property.description}
+										</p>
+									</div>
+								</article>
+							</ScrollReveal>
+						))}
+					</div>
+				</div>
 			</div>
 		</section>
 	);

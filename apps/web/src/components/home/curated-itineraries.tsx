@@ -1,6 +1,10 @@
 "use client";
 
-import { IconClock, IconMapPin, IconSparkles } from "@tabler/icons-react";
+import {
+	IconArrowNarrowRight,
+	IconClock,
+	IconMapPin,
+} from "@tabler/icons-react";
 import { StaggerText } from "./motion-utils";
 import ScrollReveal from "./scroll-reveal";
 
@@ -9,7 +13,7 @@ const itineraries = [
 		title: "Royal Rajasthan",
 		duration: "10 Days",
 		destinations: "Jaipur, Udaipur, Jodhpur",
-		theme: "Palaces, forts, and royal hospitality",
+		theme: "Palaces, forts, royal hospitality",
 		experiences: [
 			"Private dinner in a 300-year-old haveli",
 			"Exclusive access to palace quarters",
@@ -22,7 +26,7 @@ const itineraries = [
 		title: "Desert & Heritage",
 		duration: "8 Days",
 		destinations: "Jaisalmer, Bikaner, Jodhpur",
-		theme: "Sand dunes, living forts, and desert silence",
+		theme: "Sand dunes, living forts, desert silence",
 		experiences: [
 			"Luxury camp under the Thar stars",
 			"Heritage walk through living fort lanes",
@@ -35,10 +39,10 @@ const itineraries = [
 		title: "Wildlife & Wellness",
 		duration: "7 Days",
 		destinations: "Ranthambore, Pushkar, Jaipur",
-		theme: "Tigers, temples, and transformative calm",
+		theme: "Tigers, temples, restorative calm",
 		experiences: [
 			"Private dawn safaris with naturalists",
-			"Ayurvedic wellness retreat in palace gardens",
+			"Ayurvedic retreat in palace gardens",
 			"Sunrise meditation at Pushkar ghats",
 		],
 		image:
@@ -48,84 +52,90 @@ const itineraries = [
 
 export default function CuratedItineraries() {
 	return (
-		<section className="bg-secondary/30 py-20 md:py-32 lg:py-40">
-			<div className="container mx-auto px-6">
-				<div className="mb-12 text-center sm:mb-20">
-					<ScrollReveal>
-						<p className="mb-4 font-sans text-muted-foreground text-sm uppercase tracking-[0.2em]">
-							Journeys
-						</p>
-					</ScrollReveal>
-					<StaggerText
-						as="h2"
-						className="mx-auto max-w-3xl font-heading text-4xl md:text-5xl lg:text-6xl"
-						text="Journeys as narratives"
-					/>
-					<ScrollReveal delay={0.2}>
-						<p className="mx-auto mt-6 max-w-xl font-sans text-base text-muted-foreground">
-							Each itinerary is a story — shaped by place, pace, and the
-							memories you want to carry home.
+		<section className="bg-[oklch(0.955_0.011_81)] py-[clamp(5rem,12vw,12rem)]">
+			<div className="mx-auto max-w-[1500px] px-6 sm:px-10">
+				<div className="mb-16 grid gap-8 lg:grid-cols-12 lg:items-end">
+					<div className="lg:col-span-7 lg:col-start-2">
+						<ScrollReveal>
+							<p className="mb-5 font-sans text-muted-foreground text-xs uppercase tracking-[0.28em]">
+								Journeys
+							</p>
+						</ScrollReveal>
+						<StaggerText
+							as="h2"
+							className="font-heading text-[clamp(3.4rem,8vw,8rem)] leading-[0.88] tracking-[-0.055em]"
+							text="Routes with a point of view"
+						/>
+					</div>
+					<ScrollReveal className="lg:col-span-3" delay={0.16}>
+						<p className="font-sans text-base text-muted-foreground leading-relaxed">
+							Each itinerary is a narrative arc. Arrival, immersion, release,
+							and return are composed with the same care as the hotels.
 						</p>
 					</ScrollReveal>
 				</div>
 
-				<div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+				<div className="space-y-7">
 					{itineraries.map((itinerary, index) => (
-						<ScrollReveal
-							className="group flex flex-col"
-							delay={index * 0.15}
-							key={itinerary.title}
-						>
-							<div className="relative mb-6 aspect-[4/3] overflow-hidden rounded-lg">
-								<img
-									alt={itinerary.title}
-									className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-									height={600}
-									src={itinerary.image}
-									width={800}
-								/>
-								<div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-							</div>
-
-							<div className="flex flex-1 flex-col transition-transform duration-500 group-hover:-translate-y-1">
-								<div className="mb-4 flex flex-wrap items-center gap-4 font-sans text-muted-foreground text-sm">
-									<span className="flex items-center gap-1">
-										<IconClock className="h-4 w-4" />
-										{itinerary.duration}
-									</span>
-									<span className="flex items-center gap-1">
-										<IconMapPin className="h-4 w-4" />
-										{itinerary.destinations}
-									</span>
+						<ScrollReveal delay={index * 0.12} key={itinerary.title}>
+							<article className="group grid gap-0 overflow-hidden border border-foreground/10 bg-background lg:grid-cols-12">
+								<div className="relative min-h-80 overflow-hidden lg:col-span-5">
+									<img
+										alt={itinerary.title}
+										className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+										height={700}
+										src={itinerary.image}
+										width={900}
+									/>
 								</div>
 
-								<h3 className="mb-2 font-heading text-2xl md:text-3xl">
-									{itinerary.title}
-								</h3>
-
-								<p className="mb-4 font-sans text-muted-foreground text-sm italic">
-									{itinerary.theme}
-								</p>
-
-								<div className="mb-6 flex flex-col gap-2">
-									{itinerary.experiences.map((exp) => (
-										<span
-											className="flex items-start gap-2 font-sans text-muted-foreground text-sm"
-											key={exp}
-										>
-											<IconSparkles className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-											{exp}
+								<div className="p-6 sm:p-8 lg:col-span-7 lg:p-10 xl:p-12">
+									<div className="mb-8 flex flex-wrap gap-x-6 gap-y-3 font-sans text-muted-foreground text-sm">
+										<span className="inline-flex items-center gap-2">
+											<IconClock className="h-4 w-4" strokeWidth={1.5} />
+											{itinerary.duration}
 										</span>
-									))}
-								</div>
+										<span className="inline-flex items-center gap-2">
+											<IconMapPin className="h-4 w-4" strokeWidth={1.5} />
+											{itinerary.destinations}
+										</span>
+									</div>
 
-								<a
-									className="mt-auto inline-flex h-10 w-full items-center justify-center gap-1.5 border border-border bg-transparent px-6 font-sans font-semibold text-foreground text-sm uppercase tracking-widest transition-colors hover:bg-muted"
-									href="/itineraries"
-								>
-									Explore This Journey
-								</a>
-							</div>
+									<div className="grid gap-8 lg:grid-cols-7 lg:items-start">
+										<div className="lg:col-span-3">
+											<p className="mb-3 font-sans text-primary text-xs uppercase tracking-[0.22em]">
+												{itinerary.theme}
+											</p>
+											<h3 className="font-heading text-[clamp(2.8rem,6vw,6.4rem)] leading-[0.84] tracking-[-0.055em]">
+												{itinerary.title}
+											</h3>
+										</div>
+
+										<div className="lg:col-span-4">
+											<ul className="space-y-4 border-foreground/10 border-t pt-6">
+												{itinerary.experiences.map((experience) => (
+													<li
+														className="font-sans text-muted-foreground text-sm leading-relaxed"
+														key={experience}
+													>
+														{experience}
+													</li>
+												))}
+											</ul>
+											<a
+												className="mt-8 inline-flex items-center gap-2 font-sans font-semibold text-foreground text-xs uppercase tracking-[0.22em] transition-colors hover:text-primary"
+												href="/itineraries"
+											>
+												Explore This Journey
+												<IconArrowNarrowRight
+													className="h-4 w-4"
+													strokeWidth={1.5}
+												/>
+											</a>
+										</div>
+									</div>
+								</div>
+							</article>
 						</ScrollReveal>
 					))}
 				</div>
