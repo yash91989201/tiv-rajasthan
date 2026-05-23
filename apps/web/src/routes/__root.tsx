@@ -6,14 +6,12 @@ import {
 	Scripts,
 } from "@tanstack/react-router";
 import { createMiddleware } from "@tanstack/react-start";
+import { env } from "@tiv-rajasthan/env/web";
 import { Toaster } from "@tiv-rajasthan/ui/components/sonner";
 import { TooltipProvider } from "@tiv-rajasthan/ui/components/tooltip";
 import { evlogErrorHandler } from "evlog/nitro/v3";
-
 import type { orpc } from "@/utils/orpc";
-
 import Header from "../components/header";
-
 import appCss from "../index.css?url";
 export interface RouterAppContext {
 	orpc: typeof orpc;
@@ -52,10 +50,10 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
 			<body>
 				{children}
 				<Scripts />
-			{/* impeccable-live-start */}
-<script src="http://localhost:8400/live.js"></script>
-{/* impeccable-live-end */}
-</body>
+				{env.VITE_ENV === "dev" && (
+					<script src="http://localhost:8400/live.js" />
+				)}
+			</body>
 		</html>
 	),
 	component: RootDocument,
