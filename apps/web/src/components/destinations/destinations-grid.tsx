@@ -1,6 +1,5 @@
-"use client";
-
 import { IconArrowNarrowRight } from "@tabler/icons-react";
+import { Link } from "@tanstack/react-router";
 import { StaggerText } from "@/components/home/motion-utils";
 import ScrollReveal from "@/components/home/scroll-reveal";
 import { destinations } from "./data";
@@ -47,28 +46,28 @@ export default function DestinationsGrid() {
 								/>
 							</div>
 							<div className="rail-panel">
-								<p className="mb-4 font-sans text-primary/90 text-xs uppercase tracking-[0.24em]">
+								<p className="mb-4 font-sans text-background/52 text-xs uppercase tracking-[0.28em]">
 									{d.region}
 								</p>
-								<h3 className="font-heading text-[clamp(2.8rem,5vw,5rem)] text-foreground leading-[0.84] tracking-[-0.05em]">
+								<h3 className="font-heading text-[clamp(2.8rem,5vw,5rem)] text-background leading-[0.84] tracking-[-0.05em]">
 									{d.name}
 								</h3>
-								<p className="mt-2 font-sans text-primary/72 text-sm italic tracking-wide">
+								<p className="mt-2 font-sans text-primary/90 text-sm italic tracking-wide">
 									{d.subtitle}
 								</p>
-								<p className="mt-4 max-w-lg font-sans text-muted-foreground text-sm leading-relaxed">
+								<p className="mt-4 max-w-md font-sans text-background/62 text-sm leading-relaxed">
 									{d.description}
 								</p>
-								<a
-									className="mt-6 inline-flex items-center gap-2 font-sans text-primary text-xs uppercase tracking-[0.22em] transition-colors hover:text-primary/70"
-									href={`/destinations/${d.name.toLowerCase()}`}
+								<Link
+									className="mt-6 inline-flex items-center gap-2 font-sans text-background/88 text-xs uppercase tracking-[0.22em] transition-colors hover:text-primary focus-visible:outline focus-visible:outline-1 focus-visible:outline-primary focus-visible:outline-offset-[3px]"
+									to={`/destinations/${d.slug}`}
 								>
 									Explore {d.name}
 									<IconArrowNarrowRight
 										className="h-3.5 w-3.5"
 										strokeWidth={1.5}
 									/>
-								</a>
+								</Link>
 							</div>
 						</article>
 					))}

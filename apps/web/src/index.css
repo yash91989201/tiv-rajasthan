@@ -175,8 +175,8 @@
 	flex-direction: column;
 	justify-content: center;
 	padding: clamp(2rem, 4vw, 3.5rem);
-	border-top: 1px solid hsl(var(--primary) / 0.28);
 	background: hsl(var(--foreground) / 0.03);
+	border-top: 1px solid hsl(var(--background) / 0.14);
 }
 
 @media (max-width: 900px) {
@@ -232,4 +232,56 @@
 	.experience-cinematic-notes {
 		grid-template-columns: 1fr;
 	}
+}
+
+.moodboard-collage {
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	gap: clamp(0.75rem, 1.5vw, 1.25rem);
+	align-items: stretch;
+}
+
+.moodboard-item {
+	min-height: 14rem;
+	overflow: hidden;
+}
+
+.moodboard-item-standard {
+	grid-column: span 4;
+	min-height: 18rem;
+}
+
+.moodboard-item-wide {
+	grid-column: span 8;
+	min-height: 20rem;
+}
+
+.moodboard-item-tall {
+	grid-row: span 2;
+	grid-column: span 4;
+	min-height: 28rem;
+}
+
+@media (max-width: 900px) {
+	.moodboard-item-standard,
+	.moodboard-item-wide,
+	.moodboard-item-tall {
+		grid-row: span 1;
+		grid-column: span 12;
+	}
+}
+
+.discovery-map-placeholder {
+	background:
+		linear-gradient(
+			145deg,
+			hsl(var(--foreground) / 0.92) 0%,
+			hsl(var(--foreground) / 0.68) 55%,
+			hsl(var(--primary) / 0.35) 100%
+		),
+		repeating-linear-gradient(
+			-45deg,
+			hsl(var(--background) / 0.04) 0 2px,
+			transparent 2px 14px
+		);
 }

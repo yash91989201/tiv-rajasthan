@@ -22,30 +22,10 @@ import {
 	SheetTrigger,
 } from "@tiv-rajasthan/ui/components/sheet";
 import { motion } from "motion/react";
-
-const heritageDestinations = [
-	{ name: "Jaipur", subtitle: "Before the city blushes", slug: "jaipur" },
-	{ name: "Jaisalmer", subtitle: "Sandstone after heat", slug: "jaisalmer" },
-	{ name: "Udaipur", subtitle: "Water, marble, hush", slug: "udaipur" },
-	{ name: "Bikaner", subtitle: "Where sand meets ceremony", slug: "bikaner" },
-	{ name: "Jodhpur", subtitle: "The blue hour, held longer", slug: "jodhpur" },
-	{ name: "Pushkar", subtitle: "Pilgrim town, softened", slug: "pushkar" },
-	{
-		name: "Kumbalgarh",
-		subtitle: "The wall you have not heard of",
-		slug: "kumbalgarh",
-	},
-] as const;
-
-const wildlifeDestinations = [
-	{
-		name: "Ranthambore",
-		subtitle: "The forest keeps score",
-		slug: "ranthambore",
-	},
-	{ name: "Sariska", subtitle: "The palace in the forest", slug: "sariska" },
-	{ name: "Jawai", subtitle: "Granite, water, leopards", slug: "jawai" },
-] as const;
+import {
+	heritageDestinations,
+	wildlifeDestinations,
+} from "@/components/destinations/data";
 
 const homeLink = { to: "/", label: "Home" } as const;
 
@@ -78,7 +58,7 @@ function DestinationColumn({
 				<Link
 					className="group/item flex items-center justify-between px-4 py-2.5 transition-colors hover:bg-primary/6"
 					key={item.slug}
-					to="/destinations"
+					to={`/destinations/${item.slug}`}
 				>
 					<div>
 						<span className="font-heading text-foreground text-lg leading-tight tracking-[-0.03em]">
@@ -109,7 +89,7 @@ function MobileDestinationItems({
 				<Link
 					className="flex items-center justify-between px-4 py-3 transition-colors hover:bg-primary/6"
 					key={item.slug}
-					to="/destinations"
+					to={`/destinations/${item.slug}`}
 				>
 					<div>
 						<span className="font-heading text-base text-foreground tracking-[-0.02em]">
@@ -173,7 +153,7 @@ export default function Header() {
 						<NavigationMenuList>
 							<NavigationMenuItem>
 								<NavigationMenuTrigger
-									className="relative bg-transparent px-0 font-medium text-sm uppercase tracking-wide hover:bg-transparent hover:text-primary data-popup-open:bg-transparent data-popup-open:text-primary"
+									className="relative bg-transparent px-0 font-medium text-sm uppercase tracking-wide hover:bg-transparent hover:text-primary focus:bg-transparent focus-visible:bg-transparent data-open:bg-transparent data-open:hover:bg-transparent data-open:focus:bg-transparent data-popup-open:bg-transparent data-popup-open:hover:bg-transparent data-popup-open:text-primary"
 									render={<Link to="/destinations" />}
 								>
 									Destinations

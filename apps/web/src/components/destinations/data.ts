@@ -1,13 +1,18 @@
+export type DestinationCategory = "heritage" | "wildlife";
+
 export interface Destination {
+	category: DestinationCategory;
 	description: string;
 	image: string;
 	name: string;
 	region: string;
+	slug: string;
 	subtitle: string;
 }
 
 export const destinations: Destination[] = [
 	{
+		slug: "jaipur",
 		name: "Jaipur",
 		subtitle: "Before the city blushes",
 		description:
@@ -15,8 +20,10 @@ export const destinations: Destination[] = [
 		image:
 			"https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=1200&auto=format&fit=crop",
 		region: "Amber Valley",
+		category: "heritage",
 	},
 	{
+		slug: "jaisalmer",
 		name: "Jaisalmer",
 		subtitle: "Sandstone after heat",
 		description:
@@ -24,8 +31,10 @@ export const destinations: Destination[] = [
 		image:
 			"https://images.pexels.com/photos/3581368/pexels-photo-3581368.jpeg?auto=compress&cs=tinysrgb&w=1200",
 		region: "Thar Desert",
+		category: "heritage",
 	},
 	{
+		slug: "udaipur",
 		name: "Udaipur",
 		subtitle: "Water, marble, hush",
 		description:
@@ -33,8 +42,10 @@ export const destinations: Destination[] = [
 		image:
 			"https://images.pexels.com/photos/3881104/pexels-photo-3881104.jpeg?auto=compress&cs=tinysrgb&w=1200",
 		region: "Aravalli Lakes",
+		category: "heritage",
 	},
 	{
+		slug: "bikaner",
 		name: "Bikaner",
 		subtitle: "Where sand meets ceremony",
 		description:
@@ -42,8 +53,10 @@ export const destinations: Destination[] = [
 		image:
 			"https://images.unsplash.com/photo-1595651443546-9a6e5e3e2521?q=80&w=1200&auto=format&fit=crop",
 		region: "Northern Desert",
+		category: "heritage",
 	},
 	{
+		slug: "jodhpur",
 		name: "Jodhpur",
 		subtitle: "The blue hour, held longer",
 		description:
@@ -51,26 +64,10 @@ export const destinations: Destination[] = [
 		image:
 			"https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=1200&auto=format&fit=crop",
 		region: "Marwar Plateau",
+		category: "heritage",
 	},
 	{
-		name: "Sariska",
-		subtitle: "The palace in the forest",
-		description:
-			"A former hunting lodge turned quiet retreat, dawn drives through scrubland, and evenings where the only audience is the canopy.",
-		image:
-			"https://images.pexels.com/photos/7846476/pexels-photo-7846476.jpeg?auto=compress&cs=tinysrgb&w=1200",
-		region: "Aravalli Range",
-	},
-	{
-		name: "Jawai",
-		subtitle: "Granite, water, leopards",
-		description:
-			"Leopard country where granite hills hold the stillness, a lake at first light, and the kind of camp that knows when not to speak.",
-		image:
-			"https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1200&auto=format&fit=crop",
-		region: "Aravalli Hills",
-	},
-	{
+		slug: "pushkar",
 		name: "Pushkar",
 		subtitle: "Pilgrim town, softened",
 		description:
@@ -78,8 +75,10 @@ export const destinations: Destination[] = [
 		image:
 			"https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop",
 		region: "Central Rajasthan",
+		category: "heritage",
 	},
 	{
+		slug: "kumbalgarh",
 		name: "Kumbalgarh",
 		subtitle: "The wall you have not heard of",
 		description:
@@ -87,8 +86,10 @@ export const destinations: Destination[] = [
 		image:
 			"https://images.pexels.com/photos/3581368/pexels-photo-3581368.jpeg?auto=compress&cs=tinysrgb&w=1200",
 		region: "Aravalli Range",
+		category: "heritage",
 	},
 	{
+		slug: "ranthambore",
 		name: "Ranthambore",
 		subtitle: "The forest keeps score",
 		description:
@@ -96,5 +97,42 @@ export const destinations: Destination[] = [
 		image:
 			"https://images.pexels.com/photos/7846476/pexels-photo-7846476.jpeg?auto=compress&cs=tinysrgb&w=1200",
 		region: "Sawai Madhopur",
+		category: "wildlife",
 	},
-] as const;
+	{
+		slug: "sariska",
+		name: "Sariska",
+		subtitle: "The palace in the forest",
+		description:
+			"A former hunting lodge turned quiet retreat, dawn drives through scrubland, and evenings where the only audience is the canopy.",
+		image:
+			"https://images.pexels.com/photos/7846476/pexels-photo-7846476.jpeg?auto=compress&cs=tinysrgb&w=1200",
+		region: "Aravalli Range",
+		category: "wildlife",
+	},
+	{
+		slug: "jawai",
+		name: "Jawai",
+		subtitle: "Granite, water, leopards",
+		description:
+			"Leopard country where granite hills hold the stillness, a lake at first light, and the kind of camp that knows when not to speak.",
+		image:
+			"https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1200&auto=format&fit=crop",
+		region: "Aravalli Hills",
+		category: "wildlife",
+	},
+];
+
+export const heritageDestinations = destinations.filter(
+	(d) => d.category === "heritage"
+);
+
+export const wildlifeDestinations = destinations.filter(
+	(d) => d.category === "wildlife"
+);
+
+export function getDestinationBySlug(slug: string): Destination | undefined {
+	return destinations.find((d) => d.slug === slug);
+}
+
+export type DestinationSlug = (typeof destinations)[number]["slug"];
