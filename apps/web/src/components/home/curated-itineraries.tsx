@@ -52,7 +52,7 @@ const itineraries = [
 
 export default function CuratedItineraries() {
 	return (
-		<section className="bg-[oklch(0.955_0.011_81)] py-[clamp(5rem,12vw,12rem)]">
+		<section className="bg-muted py-[clamp(5rem,12vw,12rem)]">
 			<div className="mx-auto max-w-[1500px] px-6 sm:px-10">
 				<div className="mb-16 grid gap-8 lg:grid-cols-12 lg:items-end">
 					<div className="lg:col-span-7 lg:col-start-2">
