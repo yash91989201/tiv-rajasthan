@@ -76,13 +76,13 @@ export default function FeaturedDestinations() {
 							/>
 							<div className="absolute inset-0 bg-gradient-to-t from-foreground/96 via-foreground/58 to-primary/16" />
 							<div className="destination-panel">
-								<p className="mb-3 font-sans text-primary/90 text-xs uppercase tracking-[0.24em]">
+								<p className="mb-3 font-sans text-primary text-xs uppercase tracking-[0.24em]">
 									{destination.subtitle}
 								</p>
 								<h3 className="font-heading text-[clamp(2.4rem,4.8vw,5.4rem)] text-background leading-[0.84] tracking-[-0.05em]">
 									{destination.name}
 								</h3>
-								<p className="mt-4 max-w-md font-sans text-primary/86 text-sm leading-relaxed">
+								<p className="mt-4 max-w-md font-sans text-sm leading-relaxed">
 									{destination.description}
 								</p>
 							</div>

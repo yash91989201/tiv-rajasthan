@@ -88,13 +88,13 @@ export default function SignatureExperiences() {
 							/>
 							<div className="absolute inset-0 bg-gradient-to-t from-foreground/94 via-foreground/42 to-transparent" />
 							<div className="experience-panel">
-								<p className="mb-3 font-sans text-primary/85 text-xs uppercase tracking-[0.24em]">
+								<p className="mb-3 font-sans text-primary text-xs uppercase tracking-[0.24em]">
 									{experience.label}
 								</p>
 								<h3 className="font-heading text-[clamp(2rem,4vw,4.8rem)] text-background leading-[0.88] tracking-[-0.045em]">
 									{experience.title}
 								</h3>
-								<p className="mt-4 max-w-md font-sans text-primary/90 text-sm leading-relaxed">
+								<p className="mt-4 max-w-md font-sans text-sm text-white leading-relaxed">
 									{experience.description}
 								</p>
 							</div>
