@@ -9,6 +9,10 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as LuxuryStaysRouteImport } from './routes/luxury-stays'
+import { Route as ItinerariesRouteImport } from './routes/itineraries'
+import { Route as ContactUsRouteImport } from './routes/contact-us'
+import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DestinationsIndexRouteImport } from './routes/destinations/index'
 import { Route as DestinationsUdaipurRouteImport } from './routes/destinations/udaipur'
@@ -24,6 +28,26 @@ import { Route as DestinationsBikanerRouteImport } from './routes/destinations/b
 import { Route as ApiRpcSplatRouteImport } from './routes/api/rpc/$'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 
+const LuxuryStaysRoute = LuxuryStaysRouteImport.update({
+  id: '/luxury-stays',
+  path: '/luxury-stays',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ItinerariesRoute = ItinerariesRouteImport.update({
+  id: '/itineraries',
+  path: '/itineraries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactUsRoute = ContactUsRouteImport.update({
+  id: '/contact-us',
+  path: '/contact-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutUsRoute = AboutUsRouteImport.update({
+  id: '/about-us',
+  path: '/about-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -97,6 +121,10 @@ const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
+  '/contact-us': typeof ContactUsRoute
+  '/itineraries': typeof ItinerariesRoute
+  '/luxury-stays': typeof LuxuryStaysRoute
   '/destinations/bikaner': typeof DestinationsBikanerRoute
   '/destinations/jaipur': typeof DestinationsJaipurRoute
   '/destinations/jaisalmer': typeof DestinationsJaisalmerRoute
@@ -113,6 +141,10 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
+  '/contact-us': typeof ContactUsRoute
+  '/itineraries': typeof ItinerariesRoute
+  '/luxury-stays': typeof LuxuryStaysRoute
   '/destinations/bikaner': typeof DestinationsBikanerRoute
   '/destinations/jaipur': typeof DestinationsJaipurRoute
   '/destinations/jaisalmer': typeof DestinationsJaisalmerRoute
@@ -130,6 +162,10 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
+  '/contact-us': typeof ContactUsRoute
+  '/itineraries': typeof ItinerariesRoute
+  '/luxury-stays': typeof LuxuryStaysRoute
   '/destinations/bikaner': typeof DestinationsBikanerRoute
   '/destinations/jaipur': typeof DestinationsJaipurRoute
   '/destinations/jaisalmer': typeof DestinationsJaisalmerRoute
@@ -148,6 +184,10 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about-us'
+    | '/contact-us'
+    | '/itineraries'
+    | '/luxury-stays'
     | '/destinations/bikaner'
     | '/destinations/jaipur'
     | '/destinations/jaisalmer'
@@ -164,6 +204,10 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about-us'
+    | '/contact-us'
+    | '/itineraries'
+    | '/luxury-stays'
     | '/destinations/bikaner'
     | '/destinations/jaipur'
     | '/destinations/jaisalmer'
@@ -180,6 +224,10 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about-us'
+    | '/contact-us'
+    | '/itineraries'
+    | '/luxury-stays'
     | '/destinations/bikaner'
     | '/destinations/jaipur'
     | '/destinations/jaisalmer'
@@ -197,6 +245,10 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutUsRoute: typeof AboutUsRoute
+  ContactUsRoute: typeof ContactUsRoute
+  ItinerariesRoute: typeof ItinerariesRoute
+  LuxuryStaysRoute: typeof LuxuryStaysRoute
   DestinationsBikanerRoute: typeof DestinationsBikanerRoute
   DestinationsJaipurRoute: typeof DestinationsJaipurRoute
   DestinationsJaisalmerRoute: typeof DestinationsJaisalmerRoute
@@ -214,6 +266,34 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/luxury-stays': {
+      id: '/luxury-stays'
+      path: '/luxury-stays'
+      fullPath: '/luxury-stays'
+      preLoaderRoute: typeof LuxuryStaysRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/itineraries': {
+      id: '/itineraries'
+      path: '/itineraries'
+      fullPath: '/itineraries'
+      preLoaderRoute: typeof ItinerariesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact-us': {
+      id: '/contact-us'
+      path: '/contact-us'
+      fullPath: '/contact-us'
+      preLoaderRoute: typeof ContactUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about-us': {
+      id: '/about-us'
+      path: '/about-us'
+      fullPath: '/about-us'
+      preLoaderRoute: typeof AboutUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -317,6 +397,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutUsRoute: AboutUsRoute,
+  ContactUsRoute: ContactUsRoute,
+  ItinerariesRoute: ItinerariesRoute,
+  LuxuryStaysRoute: LuxuryStaysRoute,
   DestinationsBikanerRoute: DestinationsBikanerRoute,
   DestinationsJaipurRoute: DestinationsJaipurRoute,
   DestinationsJaisalmerRoute: DestinationsJaisalmerRoute,

@@ -30,10 +30,10 @@ import {
 const homeLink = { to: "/", label: "Home" } as const;
 
 const navLinks = [
-	{ to: "/luxury-stay", label: "Luxury Stay" },
+	{ to: "/luxury-stays", label: "Luxury Stay" },
 	{ to: "/itineraries", label: "Itineraries" },
-	{ to: "/about", label: "About Us" },
-	{ to: "/contact", label: "Contact" },
+	{ to: "/about-us", label: "About Us" },
+	{ to: "/contact-us", label: "Contact" },
 ] as const;
 
 function DestinationColumn({
