@@ -14,7 +14,7 @@ export default function BrandStory() {
 				<div className="lg:col-span-5 lg:col-start-2 lg:pt-24">
 					<ScrollReveal>
 						<p className="mb-6 font-sans text-muted-foreground text-xs uppercase tracking-[0.26em]">
-							The manner
+							The way of it
 						</p>
 					</ScrollReveal>
 
@@ -22,7 +22,7 @@ export default function BrandStory() {
 						as="h2"
 						className="max-w-2xl font-heading text-[clamp(3.4rem,7vw,7rem)] leading-[0.9] tracking-[-0.045em]"
 						delay={0.1}
-						text="Nothing here should feel handed to a crowd"
+						text="Nothing here follows a script"
 					/>
 				</div>
 
@@ -38,13 +38,12 @@ export default function BrandStory() {
 					</div>
 				</ScrollReveal>
 
-				<div className="lg:col-span-4 lg:col-start-3 lg:-mt-28">
+				<div className="lg:col-span-4 lg:col-start-3 lg:-mt-44">
 					<ScrollReveal delay={0.2}>
 						<p className="max-w-lg font-sans text-lg text-muted-foreground leading-relaxed md:text-xl">
-							We plan for the parts a brochure cannot hold: a late breakfast
-							when the city is already awake, a guide who knows when to stop
-							talking, a room chosen because the evening light settles well
-							there.
+							A late breakfast when the city is already awake. A guide who
+							knows when to stop talking. A room chosen because the evening
+							light settles well there.
 						</p>
 					</ScrollReveal>
 				</div>
@@ -52,8 +51,8 @@ export default function BrandStory() {
 				<div className="lg:col-span-3 lg:col-start-8 lg:-mt-10">
 					<ScrollReveal delay={0.3}>
 						<p className="max-w-sm border-foreground/10 border-t pt-6 font-sans text-muted-foreground text-sm leading-relaxed">
-							The rarest luxury is not access alone. It is the feeling that no
-							one is rushing you through it.
+							The rarest luxury is not access. It is the feeling that no one
+							is rushing you through it.
 						</p>
 					</ScrollReveal>
 				</div>

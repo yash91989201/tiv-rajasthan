@@ -5,44 +5,49 @@ import ScrollReveal from "./scroll-reveal";
 
 const experiences = [
 	{
-		title: "Dinner after the doors close",
+		title: "Panna Meena Ka Kund",
 		description:
-			"A courtyard lit low, silver thali service, and dishes remembered by families who have cooked inside these walls for generations.",
+			"Panna Meena Ka Kund at first light — an eight-storey stepwell where crisscross geometry meets still water, and the only sound is your own footsteps.",
 		image:
-			"https://images.pexels.com/photos/2413613/pexels-photo-2413613.jpeg?auto=compress&cs=tinysrgb&w=1200",
-		label: "After dark",
+			"https://images.unsplash.com/photo-1765396690111-3baee282963b?q=80&w=1200&auto=format&fit=crop",
+		label: "Before the crowds",
+		location: "Jaipur",
 	},
 	{
-		title: "A camp with no performance",
+		title: "Jag Mandir",
 		description:
-			"Canvas suites under hard stars, music close to the fire, and the Thar at midnight left alone enough to be felt.",
+			"Jag Mandir by boat at aperitif hour — a 17th-century palace garden where marble holds the evening cool and the city stays across the water.",
 		image:
-			"https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1200&auto=format&fit=crop",
-		label: "Open sky",
+			"https://images.unsplash.com/photo-1655106606799-01e0100e9b94?q=80&w=1200&auto=format&fit=crop",
+		label: "On the lake",
+		location: "Udaipur",
 	},
 	{
-		title: "Walks before the city opens",
+		title: "Sam Sand Dunes",
 		description:
-			"Historians, artisans, and old city residents take you through fort lanes while shopkeepers are still washing the stone.",
+			"Sam Sand Dunes after the camel safari — canvas suites, fire close, and the dense silence that arrives when the wind drops over the desert.",
 		image:
-			"https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop",
-		label: "Before opening",
+			"https://images.unsplash.com/photo-1636009559567-7a315a74e0e1?q=80&w=1200&auto=format&fit=crop",
+		label: "Under stars",
+		location: "Jaisalmer",
 	},
 	{
-		title: "The forest at listening hour",
+		title: "Ranthambore",
 		description:
-			"Ranthambore at dawn and dusk with naturalists who read alarm calls, dust, paw marks, and the long pause before movement.",
+			"Ranthambore at dawn with naturalists who read alarm calls, paw marks, and the long pause before a tiger decides to move.",
 		image:
-			"https://images.unsplash.com/photo-1544984243-ec57ea16fe25?q=80&w=1200&auto=format&fit=crop",
+			"https://images.unsplash.com/photo-1700562556421-8b96fdd43898?q=80&w=1200&auto=format&fit=crop",
 		label: "Forest hour",
+		location: "Ranthambore",
 	},
 	{
-		title: "Recovery without theatre",
+		title: "Jaswant Thada",
 		description:
-			"Ayurvedic therapies, gentle practice, and lake-facing quiet arranged for recovery, not for the photograph of recovery.",
+			"Jaswant Thada in the late afternoon — white marble cenotaphs catching the last sun, quiet enough to hear the carvings breathe.",
 		image:
-			"https://images.pexels.com/photos/3225528/pexels-photo-3225528.jpeg?auto=compress&cs=tinysrgb&w=1200",
+			"https://images.unsplash.com/photo-1676444490527-cf8f7894e9f0?q=80&w=1200&auto=format&fit=crop",
 		label: "Stillness",
+		location: "Jodhpur",
 	},
 ] as const;
 
@@ -96,6 +101,9 @@ export default function SignatureExperiences() {
 								</h3>
 								<p className="mt-4 max-w-md font-sans text-sm text-white leading-relaxed">
 									{experience.description}
+								</p>
+								<p className="mt-3 font-sans text-background/50 text-xs uppercase tracking-[0.18em]">
+									{experience.location}
 								</p>
 							</div>
 						</article>

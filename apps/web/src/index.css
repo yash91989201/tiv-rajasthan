@@ -73,6 +73,10 @@
 	grid-column: span 4;
 }
 
+.destinations-numbered-field .destination-card:nth-child(5) {
+	grid-column: span 8;
+}
+
 .destinations-numbered-field .destination-index {
 	position: absolute;
 	top: 1rem;

@@ -2,6 +2,7 @@
 
 import { StaggerText } from "./motion-utils";
 import ScrollReveal from "./scroll-reveal";
+import { Link } from "@tanstack/react-router";
 
 const destinations = [
 	{
@@ -36,6 +37,14 @@ const destinations = [
 		image:
 			"https://images.pexels.com/photos/7846476/pexels-photo-7846476.jpeg?auto=compress&cs=tinysrgb&w=1200",
 	},
+	{
+		name: "Jodhpur",
+		subtitle: "Indigo before the sun climbs",
+		description:
+			"Mehrangarh before the crowds gather, blue walls catching the first light, and lanes where a wrong turn still leads somewhere better.",
+		image:
+			"https://images.unsplash.com/photo-1597040663315-34cee2a98903?q=80&w=1200&auto=format&fit=crop",
+	}
 ] as const;
 
 export default function FeaturedDestinations() {
@@ -52,12 +61,12 @@ export default function FeaturedDestinations() {
 						<StaggerText
 							as="h2"
 							className="max-w-4xl font-heading text-[clamp(3.4rem,8vw,8rem)] leading-[0.88] tracking-[-0.05em]"
-							text="One state, four kinds of silence"
+							text="One state, five kinds of silence"
 						/>
 					</div>
 					<ScrollReveal className="lg:col-span-3 lg:col-start-10" delay={0.16}>
 						<p className="border-background/16 border-t pt-6 font-sans text-background/66 text-base leading-relaxed">
-							Jaipur, Udaipur, Jaisalmer, Ranthambore. We do not flatten them
+							Jaipur, Udaipur, Jaisalmer, Ranthambore, Jodhpur. We do not flatten them
 							into one royal postcard. Each place asks for a different hour.
 						</p>
 					</ScrollReveal>
@@ -85,6 +94,13 @@ export default function FeaturedDestinations() {
 								<p className="mt-4 max-w-md font-sans text-sm leading-relaxed">
 									{destination.description}
 								</p>
+								<Link
+									className="mt-5 inline-flex items-center gap-2 font-sans text-background/80 text-xs uppercase tracking-[0.22em] transition-colors hover:text-primary focus-visible:outline focus-visible:outline-1 focus-visible:outline-primary focus-visible:outline-offset-[3px]"
+									to={`/destinations/${destination.name.toLowerCase()}`}
+								>
+									Explore {destination.name}
+									<svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0-6.75-6.75M19.5 12l-6.75 6.75" /></svg>
+								</Link>
 							</div>
 						</article>
 					))}
