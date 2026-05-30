@@ -32,13 +32,13 @@ export const Route = createFileRoute("/contact-us")({
 function RouteComponent() {
 	return (
 		<div className="flex flex-col bg-background">
-			<ContactHero />
-			<ContactFormSection />
+			<Hero />
+			<ContactForm />
 		</div>
 	);
 }
 
-function ContactHero() {
+function Hero() {
 	const shouldReduceMotion = useReducedMotion() ?? false;
 
 	return (
@@ -114,7 +114,7 @@ function ContactHero() {
 	);
 }
 
-function ContactFormSection() {
+function ContactForm() {
 	return (
 		<section
 			className="relative overflow-hidden bg-background py-[clamp(5rem,12vw,11rem)]"

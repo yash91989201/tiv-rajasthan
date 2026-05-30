@@ -30,16 +30,16 @@ export const Route = createFileRoute("/about-us")({
 function RouteComponent() {
 	return (
 		<div className="flex flex-col bg-background">
-			<AboutHero />
-			<EditorialStory />
-			<PrinciplesSection />
-			<PromiseSection />
-			<AboutClosing />
+			<Hero />
+			<OriginStory />
+			<CorePrinciples />
+			<BrandPromise />
+			<ClosingCTA />
 		</div>
 	);
 }
 
-function AboutHero() {
+function Hero() {
 	const shouldReduceMotion = useReducedMotion() ?? false;
 
 	return (
@@ -115,7 +115,7 @@ function AboutHero() {
 	);
 }
 
-function EditorialStory() {
+function OriginStory() {
 	return (
 		<section className="relative overflow-hidden bg-background py-[clamp(5rem,12vw,11rem)]">
 			<div className="pointer-events-none absolute top-12 left-1/2 hidden -translate-x-1/2 font-heading text-[22vw] text-muted/70 leading-none tracking-[-0.08em] lg:block">
@@ -196,7 +196,7 @@ const principles = [
 	},
 ] as const;
 
-function PrinciplesSection() {
+function CorePrinciples() {
 	return (
 		<section className="relative overflow-hidden bg-background py-[clamp(5rem,12vw,11rem)]">
 			<div className="mx-auto max-w-[1500px] px-6 sm:px-10">
@@ -254,7 +254,7 @@ function PrinciplesSection() {
 	);
 }
 
-function PromiseSection() {
+function BrandPromise() {
 	return (
 		<section className="relative overflow-hidden bg-foreground py-[clamp(5rem,12vw,11rem)] text-background">
 			<div className="mx-auto max-w-[1500px] px-6 sm:px-10">
@@ -302,7 +302,7 @@ function PromiseSection() {
 	);
 }
 
-function AboutClosing() {
+function ClosingCTA() {
 	return (
 		<section className="relative min-h-[70vh] overflow-hidden bg-background">
 			<div className="relative z-10 mx-auto grid min-h-[70vh] max-w-[1500px] grid-cols-1 items-center gap-12 px-6 py-24 sm:px-10 lg:grid-cols-12">

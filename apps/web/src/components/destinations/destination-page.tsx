@@ -3,10 +3,10 @@
 import CulinaryExperiences from "./sections/culinary-experiences";
 import CulturalStory from "./sections/cultural-story";
 import CuratedItinerary from "./sections/curated-itinerary";
-import DestinationCTA from "./sections/destination-cta";
+import ClosingCTA from "./sections/closing-cta";
 import DestinationHero from "./sections/destination-hero";
 import DiscoveryMap from "./sections/discovery-map";
-import EditorialIntro from "./sections/editorial-intro";
+import DestinationOverview from "./sections/destination-overview";
 import ExperienceShowcase from "./sections/experience-showcase";
 import MoodboardGallery from "./sections/moodboard-gallery";
 import SeasonalAtmosphere from "./sections/seasonal-atmosphere";
@@ -22,7 +22,7 @@ export default function DestinationPage({ data }: DestinationPageProps) {
 	return (
 		<div className="flex flex-col">
 			<DestinationHero data={data.hero} mood={data.mood} />
-			<EditorialIntro data={data.editorialIntro} />
+			<DestinationOverview data={data.editorialIntro} />
 			<ExperienceShowcase data={data.experiences} />
 			<MoodboardGallery data={data.moodboard} />
 			<CuratedItinerary data={data.itineraries} />
@@ -32,7 +32,7 @@ export default function DestinationPage({ data }: DestinationPageProps) {
 			<CulinaryExperiences data={data.cuisine} />
 			<DiscoveryMap data={data.discovery} />
 			<TravelStories data={data.stories} />
-			<DestinationCTA data={data.cta} mood={data.mood} />
+			<ClosingCTA data={data.cta} mood={data.mood} />
 		</div>
 	);
 }

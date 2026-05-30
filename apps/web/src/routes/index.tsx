@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
+import BrandStory from "@/components/home/brand-story";
+import ClosingCTA from "@/components/home/closing-cta";
 import CuratedItineraries from "@/components/home/curated-itineraries";
-import EditorialIntro from "@/components/home/editorial-intro";
 import FeaturedDestinations from "@/components/home/featured-destinations";
-import FinalCTA from "@/components/home/final-cta";
-import HeroSection from "@/components/home/hero-section";
-import LuxuryStayPreview from "@/components/home/luxury-stay-preview";
+import FeaturedStays from "@/components/home/featured-stays";
+import Hero from "@/components/home/hero";
 import SignatureExperiences from "@/components/home/signature-experiences";
 import WhyChooseUs from "@/components/home/why-choose-us";
 
@@ -15,14 +15,14 @@ export const Route = createFileRoute("/")({
 function RouteComponent() {
 	return (
 		<div className="flex flex-col">
-			<HeroSection />
-			<EditorialIntro />
+			<Hero />
+			<BrandStory />
 			<FeaturedDestinations />
 			<SignatureExperiences />
 			<CuratedItineraries />
-			<LuxuryStayPreview />
+			<FeaturedStays />
 			<WhyChooseUs />
-			<FinalCTA />
+			<ClosingCTA />
 		</div>
 	);
 }

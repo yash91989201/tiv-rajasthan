@@ -4,11 +4,11 @@ import { ImageReveal, StaggerText } from "@/components/home/motion-utils";
 import ScrollReveal from "@/components/home/scroll-reveal";
 import type { EditorialIntroSection } from "../types";
 
-interface EditorialIntroProps {
+interface DestinationOverviewProps {
 	data: EditorialIntroSection;
 }
 
-export default function EditorialIntro({ data }: EditorialIntroProps) {
+export default function DestinationOverview({ data }: DestinationOverviewProps) {
 	return (
 		<section className="relative overflow-hidden bg-background py-[clamp(5rem,12vw,11rem)]">
 			{data.backgroundWord ? (

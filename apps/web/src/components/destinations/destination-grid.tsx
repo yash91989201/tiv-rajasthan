@@ -4,7 +4,7 @@ import { StaggerText } from "@/components/home/motion-utils";
 import ScrollReveal from "@/components/home/scroll-reveal";
 import { destinations } from "./data";
 
-export default function DestinationsGrid() {
+export default function DestinationGrid() {
 	return (
 		<section className="overflow-hidden bg-foreground py-[clamp(5rem,12vw,12rem)] text-background">
 			<div className="mx-auto max-w-[1600px] px-6 sm:px-10">

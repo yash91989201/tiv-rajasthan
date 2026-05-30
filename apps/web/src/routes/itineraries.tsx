@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { itineraries } from "@/components/itineraries/data";
-import ItinerariesEditorialIntro from "@/components/itineraries/editorial-intro";
-import ItinerariesFinalCTA from "@/components/itineraries/final-cta";
-import ItinerariesHero from "@/components/itineraries/hero-section";
-import ItinerariesSection from "@/components/itineraries/itineraries-section";
+import Hero from "@/components/itineraries/hero";
+import PlanningApproach from "@/components/itineraries/planning-approach";
+import FeaturedItineraries from "@/components/itineraries/featured-itineraries";
+import ClosingCTA from "@/components/itineraries/closing-cta";
 
 export const Route = createFileRoute("/itineraries")({
 	component: RouteComponent,
@@ -12,10 +12,10 @@ export const Route = createFileRoute("/itineraries")({
 function RouteComponent() {
 	return (
 		<div className="flex flex-col">
-			<ItinerariesHero />
-			<ItinerariesEditorialIntro />
-			<ItinerariesSection itineraries={itineraries} />
-			<ItinerariesFinalCTA />
+			<Hero />
+			<PlanningApproach />
+			<FeaturedItineraries itineraries={itineraries} />
+			<ClosingCTA />
 		</div>
 	);
 }

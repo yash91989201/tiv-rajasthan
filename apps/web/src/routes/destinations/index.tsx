@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import DestinationsClosing from "@/components/destinations/destinations-closing";
-import DestinationsGrid from "@/components/destinations/destinations-grid";
-import DestinationsHero from "@/components/destinations/destinations-hero";
+import Hero from "@/components/destinations/hero";
+import DestinationGrid from "@/components/destinations/destination-grid";
+import ClosingCTA from "@/components/destinations/closing-cta";
 
 export const Route = createFileRoute("/destinations/")({
 	component: RouteComponent,
@@ -10,9 +10,9 @@ export const Route = createFileRoute("/destinations/")({
 function RouteComponent() {
 	return (
 		<div className="flex flex-col">
-			<DestinationsHero />
-			<DestinationsGrid />
-			<DestinationsClosing />
+			<Hero />
+			<DestinationGrid />
+			<ClosingCTA />
 		</div>
 	);
 }

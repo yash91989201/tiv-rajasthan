@@ -27,7 +27,7 @@ const properties = [
 	},
 ] as const;
 
-export default function LuxuryStayPreview() {
+export default function FeaturedStays() {
 	return (
 		<section className="relative overflow-hidden bg-background py-[clamp(5rem,12vw,12rem)]">
 			<div className="mx-auto max-w-[1500px] px-6 sm:px-10">

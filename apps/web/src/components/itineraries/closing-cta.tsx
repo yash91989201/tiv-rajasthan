@@ -4,7 +4,7 @@ import { IconArrowNarrowRight } from "@tabler/icons-react";
 import { ParallaxImage, StaggerText } from "@/components/home/motion-utils";
 import ScrollReveal from "@/components/home/scroll-reveal";
 
-export default function ItinerariesFinalCTA() {
+export default function ClosingCTA() {
 	return (
 		<section className="relative min-h-[80vh] overflow-hidden bg-foreground text-background">
 			<ParallaxImage

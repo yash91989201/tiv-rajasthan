@@ -210,7 +210,7 @@ function StandardCard({ itinerary, index }: { itinerary: Itinerary; index: numbe
 	);
 }
 
-export default function ItinerariesSection({
+export default function FeaturedItineraries({
 	itineraries,
 }: {
 	itineraries: Itinerary[];

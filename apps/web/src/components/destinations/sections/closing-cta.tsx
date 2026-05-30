@@ -4,14 +4,14 @@ import { IconArrowNarrowRight } from "@tabler/icons-react";
 import { ParallaxImage, StaggerText } from "@/components/home/motion-utils";
 import ScrollReveal from "@/components/home/scroll-reveal";
 import { moodOverlayClass } from "../mood-utils";
-import type { DestinationCTASection, DestinationMood } from "../types";
+import type { ClosingCTASection, DestinationMood } from "../types";
 
-interface DestinationCTAProps {
-	data: DestinationCTASection;
+interface ClosingCTAProps {
+	data: ClosingCTASection;
 	mood: DestinationMood;
 }
 
-export default function DestinationCTA({ data, mood }: DestinationCTAProps) {
+export default function ClosingCTA({ data, mood }: ClosingCTAProps) {
 	return (
 		<section className="relative min-h-[86vh] overflow-hidden bg-foreground text-background">
 			<ParallaxImage

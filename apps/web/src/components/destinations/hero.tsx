@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import { ParallaxImage, StaggerText } from "@/components/home/motion-utils";
 import ScrollReveal from "@/components/home/scroll-reveal";
 
-export default function DestinationsHero() {
+export default function Hero() {
 	return (
 		<section className="relative min-h-svh overflow-hidden bg-foreground text-background">
 			<ParallaxImage

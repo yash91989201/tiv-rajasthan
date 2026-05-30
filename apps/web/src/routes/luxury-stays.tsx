@@ -337,20 +337,20 @@ const chapters: readonly StayChapter[] = [
 function RouteComponent() {
 	return (
 		<div className="flex flex-col bg-background">
-			<LuxuryStayHero />
-			<EditorialPrelude />
-			<SplitChapter chapter={chapters[0]} />
-			<GalleryChapter chapter={chapters[1]} />
-			<MosaicChapter chapter={chapters[2]} />
-			<SplitChapter chapter={chapters[3]} reverse />
-			<GalleryChapter chapter={chapters[4]} muted />
-			<MosaicChapter chapter={chapters[5]} dark />
-			<FinalInvitation />
+			<Hero />
+			<StayPhilosophy />
+			<FeaturedStayChapter chapter={chapters[0]} />
+			<StayGalleryChapter chapter={chapters[1]} />
+			<StayMosaicChapter chapter={chapters[2]} />
+			<FeaturedStayChapter chapter={chapters[3]} reverse />
+			<StayGalleryChapter chapter={chapters[4]} muted />
+			<StayMosaicChapter chapter={chapters[5]} dark />
+			<ClosingCTA />
 		</div>
 	);
 }
 
-function LuxuryStayHero() {
+function Hero() {
 	const shouldReduceMotion = useReducedMotion() ?? false;
 
 	return (
@@ -442,7 +442,7 @@ function LuxuryStayHero() {
 	);
 }
 
-function EditorialPrelude() {
+function StayPhilosophy() {
 	return (
 		<section className="relative overflow-hidden bg-background py-[clamp(5rem,11vw,11rem)]">
 			<div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-12 px-6 sm:px-10 lg:grid-cols-12 lg:gap-16">
@@ -494,7 +494,7 @@ function EditorialPrelude() {
 	);
 }
 
-function SplitChapter({
+function FeaturedStayChapter({
 	chapter,
 	reverse = false,
 }: {
@@ -563,7 +563,7 @@ function SplitChapter({
 	);
 }
 
-function GalleryChapter({
+function StayGalleryChapter({
 	chapter,
 	muted = false,
 }: {
@@ -671,7 +671,7 @@ function GalleryStayPanel({
 	);
 }
 
-function MosaicChapter({
+function StayMosaicChapter({
 	chapter,
 	dark = false,
 }: {
@@ -843,7 +843,7 @@ function StayCard({
 	);
 }
 
-function FinalInvitation() {
+function ClosingCTA() {
 	return (
 		<section className="relative min-h-[86vh] overflow-hidden bg-foreground text-background">
 			<ParallaxImage
