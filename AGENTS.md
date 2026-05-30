@@ -60,4 +60,12 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 ---
 
+## Content Writing
+
+For premium Rajasthan travel website copy, follow `.agents/skills/writing-rajasthan-luxury-content`.
+
+Before drafting, confirm: page type, destination/location, target audience, desired word count, and SEO keywords (or confirm none).
+
+---
+
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
