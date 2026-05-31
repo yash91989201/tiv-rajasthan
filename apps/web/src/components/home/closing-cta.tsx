@@ -29,16 +29,14 @@ export default function ClosingCTA() {
 						as="h2"
 						className="max-w-5xl font-heading text-[clamp(3.8rem,9vw,9.5rem)] text-background leading-[0.84] tracking-[-0.055em]"
 						delay={0.1}
-						text="Tell us the version of Rajasthan you keep imagining"
+						text="Tell us the Rajasthan you keep returning to in your mind"
 					/>
 				</div>
 
 				<div className="lg:col-span-4 lg:col-start-8 lg:self-end lg:pb-16">
 					<ScrollReveal delay={0.2}>
 						<p className="max-w-md border-background/18 border-t pt-6 font-sans text-background/72 text-base leading-relaxed md:text-lg">
-							Tell us what you want more of, what you want to avoid, and how
-							much quiet the trip should protect. We will answer with a
-							considered first shape, not a catalogue.
+							Share the moments you want to protect — a sunrise over the Thar, a private textile workshop, an unhurried meal in a restored haveli. We will shape a journey around those quiet priorities, not a checklist.
 						</p>
 					</ScrollReveal>
 
@@ -62,7 +60,7 @@ export default function ClosingCTA() {
 
 					<ScrollReveal className="mt-10" delay={0.4}>
 						<p className="font-sans text-background/45 text-xs tracking-[0.16em]">
-							A thoughtful reply within 24 hours. Consultation is complimentary.
+							A considered reply within 24 hours. Complimentary consultation.
 						</p>
 					</ScrollReveal>
 				</div>

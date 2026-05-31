@@ -22,12 +22,27 @@ import {
 	SheetTrigger,
 } from "@tiv-rajasthan/ui/components/sheet";
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 import {
 	heritageDestinations,
 	wildlifeDestinations,
 } from "@/components/destinations/data";
 
 const homeLink = { to: "/", label: "Home" } as const;
+
+function useIsTouchDevice() {
+	const [isTouch, setIsTouch] = useState(false);
+
+	useEffect(() => {
+		const mq = window.matchMedia("(hover: none)");
+		setIsTouch(mq.matches);
+		const handler = (e: MediaQueryListEvent) => setIsTouch(e.matches);
+		mq.addEventListener("change", handler);
+		return () => mq.removeEventListener("change", handler);
+	}, []);
+
+	return isTouch;
+}
 
 const navLinks = [
 	{ to: "/luxury-stays", label: "Luxury Stay" },
@@ -110,6 +125,8 @@ function MobileDestinationItems({
 }
 
 export default function Header() {
+	const isTouch = useIsTouchDevice();
+
 	return (
 		<motion.header
 			animate={{ y: 0 }}
@@ -154,13 +171,13 @@ export default function Header() {
 							<NavigationMenuItem>
 								<NavigationMenuTrigger
 									className="relative bg-transparent px-0 font-medium text-sm uppercase tracking-wide hover:bg-transparent hover:text-primary focus:bg-transparent focus-visible:bg-transparent data-open:bg-transparent data-open:hover:bg-transparent data-open:focus:bg-transparent data-popup-open:bg-transparent data-popup-open:hover:bg-transparent data-popup-open:text-primary"
-									render={<Link to="/destinations" />}
+									render={isTouch ? undefined : <Link to="/destinations" />}
 								>
 									Destinations
 								</NavigationMenuTrigger>
-								<NavigationMenuContent className="w-[38rem] border-foreground/8 bg-background/95 p-3 backdrop-blur-xl">
-									<div className="overflow-hidden">
-										<div className="grid grid-cols-2 gap-0">
+								<NavigationMenuContent className="w-[calc(100vw-2rem)] max-w-[38rem] border-foreground/8 bg-background/95 p-3 backdrop-blur-xl">
+									<div className="overflow-hidden overflow-y-auto max-h-[70vh]">
+										<div className="grid grid-cols-1 gap-0 sm:grid-cols-2">
 											<DestinationColumn
 												icon={IconBuildingArch}
 												items={heritageDestinations}

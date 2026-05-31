@@ -11,6 +11,7 @@ import { Toaster } from "@tiv-rajasthan/ui/components/sonner";
 import { TooltipProvider } from "@tiv-rajasthan/ui/components/tooltip";
 import { evlogErrorHandler } from "evlog/nitro/v3";
 import type { orpc } from "@/utils/orpc";
+import Footer from "../components/footer";
 import Header from "../components/header";
 import appCss from "../index.css?url";
 export interface RouterAppContext {
@@ -68,6 +69,7 @@ function RootDocument() {
 					<main>
 						<Outlet />
 					</main>
+					<Footer />
 				</div>
 			</TooltipProvider>
 			<Toaster richColors />
