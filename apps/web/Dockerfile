@@ -12,8 +12,8 @@ COPY packages/config/package.json packages/config/
 COPY packages/env/package.json packages/env/
 COPY packages/db/package.json packages/db/
 COPY packages/auth/package.json packages/auth/
-COPY packages/api/package.json packages/api/
 COPY packages/ui/package.json packages/ui/
+COPY packages/api/package.json packages/api/
 COPY apps/web/package.json apps/web/
 
 # Install all deps needed to build (including dev deps)
@@ -61,5 +61,10 @@ WORKDIR /app/apps/web
 
 COPY --from=builder /app/apps/web/dist ./dist
 COPY --from=builder /app/apps/web/server.ts ./server.ts
+
+# Health check using Nitro's built-in /healthz endpoint.
+# Interval: 30s, timeout: 5s, start-period: 10s, retries: 3.
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+  CMD bun x curl -sf http://localhost:3001/healthz || exit 1
 
 CMD ["bun", "server.ts"]
