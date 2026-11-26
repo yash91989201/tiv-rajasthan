@@ -9,38 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as LuxuryStaysRouteImport } from './routes/luxury-stays'
-import { Route as ItinerariesRouteImport } from './routes/itineraries'
-import { Route as ContactUsRouteImport } from './routes/contact-us'
-import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutUsRouteImport } from './routes/about-us'
+import { Route as ContactUsRouteImport } from './routes/contact-us'
+import { Route as ItinerariesRouteImport } from './routes/itineraries'
+import { Route as LuxuryStaysRouteImport } from './routes/luxury-stays'
 import { Route as DestinationsIndexRouteImport } from './routes/destinations/index'
-import { Route as DestinationsUdaipurRouteImport } from './routes/destinations/udaipur'
-import { Route as DestinationsSariskaRouteImport } from './routes/destinations/sariska'
-import { Route as DestinationsRanthamboreRouteImport } from './routes/destinations/ranthambore'
-import { Route as DestinationsPushkarRouteImport } from './routes/destinations/pushkar'
-import { Route as DestinationsKumbalgarhRouteImport } from './routes/destinations/kumbalgarh'
-import { Route as DestinationsJodhpurRouteImport } from './routes/destinations/jodhpur'
-import { Route as DestinationsJawaiRouteImport } from './routes/destinations/jawai'
-import { Route as DestinationsJaisalmerRouteImport } from './routes/destinations/jaisalmer'
-import { Route as DestinationsJaipurRouteImport } from './routes/destinations/jaipur'
 import { Route as DestinationsBikanerRouteImport } from './routes/destinations/bikaner'
-import { Route as ApiRpcSplatRouteImport } from './routes/api/rpc/$'
-import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
+import { Route as DestinationsJaipurRouteImport } from './routes/destinations/jaipur'
+import { Route as DestinationsJaisalmerRouteImport } from './routes/destinations/jaisalmer'
+import { Route as DestinationsJawaiRouteImport } from './routes/destinations/jawai'
+import { Route as DestinationsJodhpurRouteImport } from './routes/destinations/jodhpur'
+import { Route as DestinationsKumbalgarhRouteImport } from './routes/destinations/kumbalgarh'
+import { Route as DestinationsPushkarRouteImport } from './routes/destinations/pushkar'
+import { Route as DestinationsRanthamboreRouteImport } from './routes/destinations/ranthambore'
+import { Route as DestinationsSariskaRouteImport } from './routes/destinations/sariska'
+import { Route as DestinationsUdaipurRouteImport } from './routes/destinations/udaipur'
 
-const LuxuryStaysRoute = LuxuryStaysRouteImport.update({
-  id: '/luxury-stays',
-  path: '/luxury-stays',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ItinerariesRoute = ItinerariesRouteImport.update({
-  id: '/itineraries',
-  path: '/itineraries',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactUsRoute = ContactUsRouteImport.update({
-  id: '/contact-us',
-  path: '/contact-us',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutUsRoute = AboutUsRouteImport.update({
@@ -48,9 +36,19 @@ const AboutUsRoute = AboutUsRouteImport.update({
   path: '/about-us',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const ContactUsRoute = ContactUsRouteImport.update({
+  id: '/contact-us',
+  path: '/contact-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ItinerariesRoute = ItinerariesRouteImport.update({
+  id: '/itineraries',
+  path: '/itineraries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LuxuryStaysRoute = LuxuryStaysRouteImport.update({
+  id: '/luxury-stays',
+  path: '/luxury-stays',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DestinationsIndexRoute = DestinationsIndexRouteImport.update({
@@ -58,44 +56,9 @@ const DestinationsIndexRoute = DestinationsIndexRouteImport.update({
   path: '/destinations/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DestinationsUdaipurRoute = DestinationsUdaipurRouteImport.update({
-  id: '/destinations/udaipur',
-  path: '/destinations/udaipur',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DestinationsSariskaRoute = DestinationsSariskaRouteImport.update({
-  id: '/destinations/sariska',
-  path: '/destinations/sariska',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DestinationsRanthamboreRoute = DestinationsRanthamboreRouteImport.update({
-  id: '/destinations/ranthambore',
-  path: '/destinations/ranthambore',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DestinationsPushkarRoute = DestinationsPushkarRouteImport.update({
-  id: '/destinations/pushkar',
-  path: '/destinations/pushkar',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DestinationsKumbalgarhRoute = DestinationsKumbalgarhRouteImport.update({
-  id: '/destinations/kumbalgarh',
-  path: '/destinations/kumbalgarh',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DestinationsJodhpurRoute = DestinationsJodhpurRouteImport.update({
-  id: '/destinations/jodhpur',
-  path: '/destinations/jodhpur',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DestinationsJawaiRoute = DestinationsJawaiRouteImport.update({
-  id: '/destinations/jawai',
-  path: '/destinations/jawai',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DestinationsJaisalmerRoute = DestinationsJaisalmerRouteImport.update({
-  id: '/destinations/jaisalmer',
-  path: '/destinations/jaisalmer',
+const DestinationsBikanerRoute = DestinationsBikanerRouteImport.update({
+  id: '/destinations/bikaner',
+  path: '/destinations/bikaner',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DestinationsJaipurRoute = DestinationsJaipurRouteImport.update({
@@ -103,19 +66,44 @@ const DestinationsJaipurRoute = DestinationsJaipurRouteImport.update({
   path: '/destinations/jaipur',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DestinationsBikanerRoute = DestinationsBikanerRouteImport.update({
-  id: '/destinations/bikaner',
-  path: '/destinations/bikaner',
+const DestinationsJaisalmerRoute = DestinationsJaisalmerRouteImport.update({
+  id: '/destinations/jaisalmer',
+  path: '/destinations/jaisalmer',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiRpcSplatRoute = ApiRpcSplatRouteImport.update({
-  id: '/api/rpc/$',
-  path: '/api/rpc/$',
+const DestinationsJawaiRoute = DestinationsJawaiRouteImport.update({
+  id: '/destinations/jawai',
+  path: '/destinations/jawai',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
-  id: '/api/auth/$',
-  path: '/api/auth/$',
+const DestinationsJodhpurRoute = DestinationsJodhpurRouteImport.update({
+  id: '/destinations/jodhpur',
+  path: '/destinations/jodhpur',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DestinationsKumbalgarhRoute = DestinationsKumbalgarhRouteImport.update({
+  id: '/destinations/kumbalgarh',
+  path: '/destinations/kumbalgarh',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DestinationsPushkarRoute = DestinationsPushkarRouteImport.update({
+  id: '/destinations/pushkar',
+  path: '/destinations/pushkar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DestinationsRanthamboreRoute = DestinationsRanthamboreRouteImport.update({
+  id: '/destinations/ranthambore',
+  path: '/destinations/ranthambore',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DestinationsSariskaRoute = DestinationsSariskaRouteImport.update({
+  id: '/destinations/sariska',
+  path: '/destinations/sariska',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DestinationsUdaipurRoute = DestinationsUdaipurRouteImport.update({
+  id: '/destinations/udaipur',
+  path: '/destinations/udaipur',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -136,8 +124,6 @@ export interface FileRoutesByFullPath {
   '/destinations/sariska': typeof DestinationsSariskaRoute
   '/destinations/udaipur': typeof DestinationsUdaipurRoute
   '/destinations/': typeof DestinationsIndexRoute
-  '/api/auth/$': typeof ApiAuthSplatRoute
-  '/api/rpc/$': typeof ApiRpcSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -156,8 +142,6 @@ export interface FileRoutesByTo {
   '/destinations/sariska': typeof DestinationsSariskaRoute
   '/destinations/udaipur': typeof DestinationsUdaipurRoute
   '/destinations': typeof DestinationsIndexRoute
-  '/api/auth/$': typeof ApiAuthSplatRoute
-  '/api/rpc/$': typeof ApiRpcSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -177,8 +161,6 @@ export interface FileRoutesById {
   '/destinations/sariska': typeof DestinationsSariskaRoute
   '/destinations/udaipur': typeof DestinationsUdaipurRoute
   '/destinations/': typeof DestinationsIndexRoute
-  '/api/auth/$': typeof ApiAuthSplatRoute
-  '/api/rpc/$': typeof ApiRpcSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -199,8 +181,6 @@ export interface FileRouteTypes {
     | '/destinations/sariska'
     | '/destinations/udaipur'
     | '/destinations/'
-    | '/api/auth/$'
-    | '/api/rpc/$'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -219,8 +199,6 @@ export interface FileRouteTypes {
     | '/destinations/sariska'
     | '/destinations/udaipur'
     | '/destinations'
-    | '/api/auth/$'
-    | '/api/rpc/$'
   id:
     | '__root__'
     | '/'
@@ -239,8 +217,6 @@ export interface FileRouteTypes {
     | '/destinations/sariska'
     | '/destinations/udaipur'
     | '/destinations/'
-    | '/api/auth/$'
-    | '/api/rpc/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -260,31 +236,15 @@ export interface RootRouteChildren {
   DestinationsSariskaRoute: typeof DestinationsSariskaRoute
   DestinationsUdaipurRoute: typeof DestinationsUdaipurRoute
   DestinationsIndexRoute: typeof DestinationsIndexRoute
-  ApiAuthSplatRoute: typeof ApiAuthSplatRoute
-  ApiRpcSplatRoute: typeof ApiRpcSplatRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/luxury-stays': {
-      id: '/luxury-stays'
-      path: '/luxury-stays'
-      fullPath: '/luxury-stays'
-      preLoaderRoute: typeof LuxuryStaysRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/itineraries': {
-      id: '/itineraries'
-      path: '/itineraries'
-      fullPath: '/itineraries'
-      preLoaderRoute: typeof ItinerariesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact-us': {
-      id: '/contact-us'
-      path: '/contact-us'
-      fullPath: '/contact-us'
-      preLoaderRoute: typeof ContactUsRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about-us': {
@@ -294,11 +254,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutUsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/contact-us': {
+      id: '/contact-us'
+      path: '/contact-us'
+      fullPath: '/contact-us'
+      preLoaderRoute: typeof ContactUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/itineraries': {
+      id: '/itineraries'
+      path: '/itineraries'
+      fullPath: '/itineraries'
+      preLoaderRoute: typeof ItinerariesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/luxury-stays': {
+      id: '/luxury-stays'
+      path: '/luxury-stays'
+      fullPath: '/luxury-stays'
+      preLoaderRoute: typeof LuxuryStaysRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/destinations/': {
@@ -308,60 +282,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DestinationsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/destinations/udaipur': {
-      id: '/destinations/udaipur'
-      path: '/destinations/udaipur'
-      fullPath: '/destinations/udaipur'
-      preLoaderRoute: typeof DestinationsUdaipurRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/destinations/sariska': {
-      id: '/destinations/sariska'
-      path: '/destinations/sariska'
-      fullPath: '/destinations/sariska'
-      preLoaderRoute: typeof DestinationsSariskaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/destinations/ranthambore': {
-      id: '/destinations/ranthambore'
-      path: '/destinations/ranthambore'
-      fullPath: '/destinations/ranthambore'
-      preLoaderRoute: typeof DestinationsRanthamboreRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/destinations/pushkar': {
-      id: '/destinations/pushkar'
-      path: '/destinations/pushkar'
-      fullPath: '/destinations/pushkar'
-      preLoaderRoute: typeof DestinationsPushkarRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/destinations/kumbalgarh': {
-      id: '/destinations/kumbalgarh'
-      path: '/destinations/kumbalgarh'
-      fullPath: '/destinations/kumbalgarh'
-      preLoaderRoute: typeof DestinationsKumbalgarhRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/destinations/jodhpur': {
-      id: '/destinations/jodhpur'
-      path: '/destinations/jodhpur'
-      fullPath: '/destinations/jodhpur'
-      preLoaderRoute: typeof DestinationsJodhpurRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/destinations/jawai': {
-      id: '/destinations/jawai'
-      path: '/destinations/jawai'
-      fullPath: '/destinations/jawai'
-      preLoaderRoute: typeof DestinationsJawaiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/destinations/jaisalmer': {
-      id: '/destinations/jaisalmer'
-      path: '/destinations/jaisalmer'
-      fullPath: '/destinations/jaisalmer'
-      preLoaderRoute: typeof DestinationsJaisalmerRouteImport
+    '/destinations/bikaner': {
+      id: '/destinations/bikaner'
+      path: '/destinations/bikaner'
+      fullPath: '/destinations/bikaner'
+      preLoaderRoute: typeof DestinationsBikanerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/destinations/jaipur': {
@@ -371,25 +296,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DestinationsJaipurRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/destinations/bikaner': {
-      id: '/destinations/bikaner'
-      path: '/destinations/bikaner'
-      fullPath: '/destinations/bikaner'
-      preLoaderRoute: typeof DestinationsBikanerRouteImport
+    '/destinations/jaisalmer': {
+      id: '/destinations/jaisalmer'
+      path: '/destinations/jaisalmer'
+      fullPath: '/destinations/jaisalmer'
+      preLoaderRoute: typeof DestinationsJaisalmerRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/rpc/$': {
-      id: '/api/rpc/$'
-      path: '/api/rpc/$'
-      fullPath: '/api/rpc/$'
-      preLoaderRoute: typeof ApiRpcSplatRouteImport
+    '/destinations/jawai': {
+      id: '/destinations/jawai'
+      path: '/destinations/jawai'
+      fullPath: '/destinations/jawai'
+      preLoaderRoute: typeof DestinationsJawaiRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/auth/$': {
-      id: '/api/auth/$'
-      path: '/api/auth/$'
-      fullPath: '/api/auth/$'
-      preLoaderRoute: typeof ApiAuthSplatRouteImport
+    '/destinations/jodhpur': {
+      id: '/destinations/jodhpur'
+      path: '/destinations/jodhpur'
+      fullPath: '/destinations/jodhpur'
+      preLoaderRoute: typeof DestinationsJodhpurRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/destinations/kumbalgarh': {
+      id: '/destinations/kumbalgarh'
+      path: '/destinations/kumbalgarh'
+      fullPath: '/destinations/kumbalgarh'
+      preLoaderRoute: typeof DestinationsKumbalgarhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/destinations/pushkar': {
+      id: '/destinations/pushkar'
+      path: '/destinations/pushkar'
+      fullPath: '/destinations/pushkar'
+      preLoaderRoute: typeof DestinationsPushkarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/destinations/ranthambore': {
+      id: '/destinations/ranthambore'
+      path: '/destinations/ranthambore'
+      fullPath: '/destinations/ranthambore'
+      preLoaderRoute: typeof DestinationsRanthamboreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/destinations/sariska': {
+      id: '/destinations/sariska'
+      path: '/destinations/sariska'
+      fullPath: '/destinations/sariska'
+      preLoaderRoute: typeof DestinationsSariskaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/destinations/udaipur': {
+      id: '/destinations/udaipur'
+      path: '/destinations/udaipur'
+      fullPath: '/destinations/udaipur'
+      preLoaderRoute: typeof DestinationsUdaipurRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -412,8 +372,6 @@ const rootRouteChildren: RootRouteChildren = {
   DestinationsSariskaRoute: DestinationsSariskaRoute,
   DestinationsUdaipurRoute: DestinationsUdaipurRoute,
   DestinationsIndexRoute: DestinationsIndexRoute,
-  ApiAuthSplatRoute: ApiAuthSplatRoute,
-  ApiRpcSplatRoute: ApiRpcSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

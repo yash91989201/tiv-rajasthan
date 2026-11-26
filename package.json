@@ -7,18 +7,10 @@
       "packages/*"
     ],
     "catalog": {
-      "dotenv": "^18.0.10",
-      "zod": "^4.6.7",
       "typescript": "^7.0.2",
       "@types/node": "^26.6.6",
-      "next-themes": "^0.4.6",
       "react": "^19.3.1",
       "react-dom": "^19.3.1",
-      "@orpc/server": "^1.16.4",
-      "@orpc/client": "^1.16.4",
-      "@orpc/openapi": "^1.16.4",
-      "@orpc/zod": "^1.16.4",
-      "better-auth": "1.7.27",
       "@types/react": "^19.3.0",
       "@types/react-dom": "^19.3.0"
     }
@@ -29,21 +21,8 @@
     "build": "nx run-many -t build",
     "check-types": "nx run-many -t check-types",
     "dev:web": "nx run-many -t dev --projects=web",
-    "db:push": "nx run-many -t db:push --projects=@tiv-rajasthan/db",
-    "db:studio": "nx run-many -t db:studio --projects=@tiv-rajasthan/db",
-    "db:generate": "nx run-many -t db:generate --projects=@tiv-rajasthan/db",
-    "db:migrate": "nx run-many -t db:migrate --projects=@tiv-rajasthan/db",
-    "db:start": "nx run-many -t db:start --projects=@tiv-rajasthan/db",
-    "db:watch": "nx run-many -t db:watch --projects=@tiv-rajasthan/db",
-    "db:stop": "nx run-many -t db:stop --projects=@tiv-rajasthan/db",
-    "db:down": "nx run-many -t db:down --projects=@tiv-rajasthan/db",
     "check": "ultracite check",
     "fix": "ultracite fix"
-  },
-  "dependencies": {
-    "@tiv-rajasthan/env": "workspace:*",
-    "dotenv": "^18.0.10",
-    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@biomejs/biome": "2.6.8",

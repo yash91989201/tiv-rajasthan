@@ -1,48 +1,49 @@
 # tiv-rajasthan
 
-This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines React, TanStack Start, Self, ORPC, and more.
+Marketing site for TIV Rajasthan. TanStack Start with TanStack Router, built to static HTML and served by Nginx.
 
 ## Features
 
 - **TypeScript** - For type safety and improved developer experience
-- **TanStack Start** - SSR framework with TanStack Router
+- **TanStack Start / Router** - File-based routing, prerendered at build time
 - **TailwindCSS** - Utility-first CSS for rapid UI development
 - **Shared UI package** - shadcn/ui primitives live in `packages/ui`
-- **oRPC** - End-to-end type-safe APIs with OpenAPI integration
-- **Drizzle** - TypeScript-first ORM
-- **PostgreSQL** - Database engine
-- **Authentication** - Better-Auth
 - **Biome** - Linting and formatting
 - **Nx** - Smart monorepo task orchestration and caching
 
 ## Getting Started
 
-First, install the dependencies:
+Install the dependencies:
 
 ```bash
 bun install
 ```
 
-## Database Setup
-
-This project uses PostgreSQL with Drizzle ORM.
-
-1. Make sure you have a PostgreSQL database set up.
-2. Update your `apps/web/.env` file with your PostgreSQL connection details.
-
-3. Apply the schema to your database:
-
-```bash
-bun run db:push
-```
-
-Then, run the development server:
+Run the development server:
 
 ```bash
 bun run dev
 ```
 
-Open [http://localhost:3001](http://localhost:3001) in your browser to see the fullstack application.
+Open [http://localhost:3001](http://localhost:3001) in your browser.
+
+## Build
+
+```bash
+bun run build
+```
+
+Every public route is prerendered to `apps/web/dist/client`, one `index.html` per route. The build needs no environment variables or database.
+
+## Deployment
+
+`apps/web/Dockerfile` builds the site and serves `dist/client` with Nginx on port `3001`. Coolify deploys it with the repository root as build context:
+
+- Dockerfile: `apps/web/Dockerfile`
+- Proxy/container port: `3001`
+- Health path: `/health`
+
+`apps/web/nginx.conf` serves prerendered pages directly and returns `404` for unknown paths.
 
 ## UI Customization
 
@@ -79,12 +80,10 @@ If you want to add app-specific blocks instead of shared primitives, run the sha
 ```
 tiv-rajasthan/
 ├── apps/
-│   └── web/         # Fullstack application (React + TanStack Start)
-├── packages/
-│   ├── ui/          # Shared shadcn/ui components and styles
-│   ├── api/         # API layer / business logic
-│   ├── auth/        # Authentication configuration & logic
-│   └── db/          # Database schema & queries
+│   └── web/         # Public site (React + TanStack Start, prerendered)
+└── packages/
+    ├── ui/          # Shared shadcn/ui components and styles
+    └── config/      # Shared TypeScript config
 ```
 
 ## Available Scripts
@@ -93,8 +92,4 @@ tiv-rajasthan/
 - `bun run build`: Build all applications
 - `bun run dev:web`: Start only the web application
 - `bun run check-types`: Check TypeScript types across all apps
-- `bun run db:push`: Push schema changes to database
-- `bun run db:generate`: Generate database client/types
-- `bun run db:migrate`: Run database migrations
-- `bun run db:studio`: Open database studio UI
 - `bun run check`: Run Biome formatting and linting
