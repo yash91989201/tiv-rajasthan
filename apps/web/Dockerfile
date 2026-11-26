@@ -18,11 +18,7 @@ COPY apps/web/package.json apps/web/
 
 # Install all deps needed to build (including dev deps)
 RUN --mount=type=cache,target=/root/.bun/install/cache \
-  bun install --frozen-lockfile
-
-# @vitejs/plugin-rsc uses fs.renameSync for RSC temp output. Docker overlayfs can
-# throw EXDEV for that rename, so add a copy+remove fallback inside the image.
-RUN bun -e 'const fs = require("fs"), path = require("path"); const bunDir = path.join(process.cwd(), "node_modules/.bun"); const pluginDir = fs.readdirSync(bunDir).find((name) => name.startsWith("@vitejs+plugin-rsc@")); if (!pluginDir) throw new Error("@vitejs/plugin-rsc not found"); const file = path.join(bunDir, pluginDir, "node_modules/@vitejs/plugin-rsc/dist/plugin-BhzHKRFo.js"); let source = fs.readFileSync(file, "utf8"); const move = (from, to) => `try { fs.renameSync(${from}, ${to}); } catch (error) { if (error && error.code === "EXDEV") { fs.cpSync(${from}, ${to}, { recursive: true }); fs.rmSync(${from}, { recursive: true, force: true }); } else { throw error; } }`; source = source.replace("fs.renameSync(rscOutDir, tempRscOutDir);", move("rscOutDir", "tempRscOutDir")).replace("fs.renameSync(tempRscOutDir, rscOutDir);", move("tempRscOutDir", "rscOutDir")); fs.writeFileSync(file, source);'
+  bun install
 
 # Copy source
 COPY packages/config packages/config
