@@ -58,9 +58,10 @@ WORKDIR /app/apps/web
 COPY --from=builder /app/apps/web/dist ./dist
 COPY --from=builder /app/apps/web/server.ts ./server.ts
 
-# Health check using Nitro's built-in /healthz endpoint.
+# Health check against the Bun server's /health endpoint via built-in fetch
+# (the slim image ships no curl binary).
 # Interval: 30s, timeout: 5s, start-period: 10s, retries: 3.
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-  CMD bun x curl -sf http://localhost:3001/healthz || exit 1
+  CMD bun -e "fetch('http://localhost:'+(process.env.PORT??3001)+'/health').then(r=>process.exit(r.ok?0:1),()=>process.exit(1))"
 
 CMD ["bun", "server.ts"]
