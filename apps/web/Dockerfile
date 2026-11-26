@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.7
 
-FROM oven/bun:1.3.14-slim AS builder
+FROM oven/bun:1.4.5-slim AS builder
 
 WORKDIR /app
 
@@ -39,7 +39,7 @@ ENV NODE_ENV=production
 WORKDIR /app/apps/web
 RUN bun run build
 
-FROM oven/bun:1.3.14-slim AS runtime
+FROM oven/bun:1.4.5-slim AS runtime
 
 WORKDIR /app
 
